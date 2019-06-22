@@ -48,6 +48,7 @@
 	opacity = 1
 	density = 1
 	atmos_canpass = CANPASS_DENSITY
+	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_FUEL
 	var/on = 1
 	var/datum/ship_engine/gas_thruster/controller
 	var/thrust_limit = 1	//Value between 1 and 0 to limit the resulting thrust
@@ -126,7 +127,7 @@
 	spawn(20)
 		qdel(src)
 
-/obj/item/weapon/circuitboard/unary_atmos/engine
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/engine
 	name = T_BOARD("gas thruster")
 	icon_state = "mcontroller"
 	build_path = /obj/machinery/atmospherics/unary/engine/

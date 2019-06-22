@@ -6,6 +6,7 @@
 	icon_state = "body_scannerconsole"
 	density = 0
 	anchored = 1
+	construct_state = /decl/machine_construction/default/panel_closed
 	var/list/display_tags = list()
 	var/list/connected_displays = list()
 	var/list/data = list()
@@ -13,10 +14,6 @@
 
 /obj/machinery/body_scanconsole/Initialize()
 	. = ..()
-	component_parts = list(
-		new /obj/item/weapon/circuitboard/body_scanconsole(src),
-		new /obj/item/weapon/stock_parts/console_screen(src))
-	RefreshParts()
 	FindScanner()
 
 /obj/machinery/body_scanconsole/on_update_icon()
@@ -65,8 +62,13 @@
 		return
 	ui_interact(user)
 
+/obj/machinery/body_scanconsole/CanUseTopic(mob/user)
+	if(!connected)
+		return STATUS_CLOSE
+	return ..()
+
 /obj/machinery/body_scanconsole/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
-	if(connected.occupant)
+	if(connected && connected.occupant)
 		data["scanEnabled"] = TRUE
 		if(ishuman(connected.occupant))
 			data["isCompatible"] = TRUE
@@ -136,14 +138,10 @@
 		data["pushEnabled"] = FALSE
 		return TOPIC_REFRESH
 
-/obj/machinery/body_scanconsole/attackby(var/obj/item/O, user as mob)
-	if(default_deconstruction_screwdriver(user, O))
+/obj/machinery/body_scanconsole/state_transition(var/decl/machine_construction/default/new_state)
+	. = ..()
+	if(istype(new_state))
 		updateUsrDialog()
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
 
 /obj/machinery/body_scanconsole/proc/remove_display(var/obj/machinery/body_scan_display/display)
 	connected_displays -= display

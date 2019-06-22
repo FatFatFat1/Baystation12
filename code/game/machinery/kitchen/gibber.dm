@@ -8,6 +8,7 @@
 	density = 1
 	anchored = 1
 	req_access = list(access_kitchen,access_morgue)
+	construct_state = /decl/machine_construction/default/panel_closed
 
 	var/operating = 0        //Is it on?
 	var/dirty = 0            // Does it need cleaning?
@@ -40,6 +41,8 @@
 	return
 
 /obj/machinery/gibber/attack_hand(mob/user as mob)
+	if((. = ..()))
+		return
 	if(stat & (NOPOWER|BROKEN))
 		return
 	if(operating)
@@ -57,7 +60,17 @@
 	to_chat(user, "<span class='danger'>You [emagged ? "disable" : "enable"] \the [src]'s safety guard.</span>")
 	return 1
 
+/obj/machinery/gibber/components_are_accessible(path)
+	return !operating && ..()	
+
+/obj/machinery/gibber/cannot_transition_to(state_path, mob/user)
+	if(operating)
+		return SPAN_NOTICE("You must wait for \the [src] to finish operating first!")
+	return ..()	
+
 /obj/machinery/gibber/attackby(var/obj/item/W, var/mob/user)
+	if(!operating)
+		return
 	if(istype(W, /obj/item/grab))
 		var/obj/item/grab/G = W
 		if(!G.force_danger())

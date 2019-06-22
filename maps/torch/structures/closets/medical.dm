@@ -22,6 +22,9 @@
 		"medical" = COLOR_GOLD
 	)
 
+/obj/structure/closet/secure_closet/counselor
+	closet_appearance = /decl/closet_appearance/secure_closet/torch/medical
+
 /obj/structure/closet/secure_closet/CMO_torch
 	name = "chief medical officer's locker"
 	req_access = list(access_cmo)
@@ -37,6 +40,7 @@
 		/obj/item/device/radio/headset/heads/cmo,
 		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
+		/obj/item/weapon/gun/energy/confuseray,
 		/obj/item/device/megaphone,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
 		/obj/item/weapon/storage/fancy/vials,

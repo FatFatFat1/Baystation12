@@ -7,6 +7,7 @@
 	reagent_state = SOLID
 	metabolism = REM * 4
 	var/nutriment_factor = 10 // Per unit
+	var/hydration_factor = 0 // Per unit
 	var/injectable = 0
 	color = "#664330"
 	value = 0.1
@@ -50,7 +51,12 @@
 	switch(alien)
 		if(IS_RESOMI) removed *= 0.8 // Resomi get a bit more nutrition from meat, a bit less from other stuff to compensate
 		if(IS_UNATHI) removed *= 0.1 // Unathi get most of their nutrition from meat.
-	M.nutrition += nutriment_factor * removed // For hunger and fatness
+	var/nut_removed = removed
+	var/hyd_removed = removed
+	if(nutriment_factor)
+		M.adjust_nutrition(nutriment_factor * nut_removed) // For hunger and fatness
+	if(hydration_factor)
+		M.adjust_hydration(hydration_factor * hyd_removed) // For thirst
 
 /datum/reagent/nutriment/glucose
 	name = "Glucose"
@@ -75,7 +81,7 @@
 	switch(alien)
 		if(IS_RESOMI) removed *= 1.25
 		if(IS_UNATHI) removed *= 2.25
-	M.nutrition += nutriment_factor * removed // For hunger and fatness
+	M.adjust_nutrition(nutriment_factor * removed)
 
 /datum/reagent/nutriment/protein/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien && alien == IS_SKRELL)
@@ -328,7 +334,7 @@
 	value = 0.11
 
 /datum/reagent/lipozine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	M.nutrition = max(M.nutrition - 10 * removed, 0)
+	M.adjust_nutrition(-10)
 
 /* Non-food stuff like condiments */
 
@@ -531,6 +537,7 @@
 	reagent_state = LIQUID
 	color = "#e78108"
 	var/nutrition = 0 // Per unit
+	var/hydration = 6 // Per unit
 	var/adj_dizzy = 0 // Per tick
 	var/adj_drowsy = 0
 	var/adj_sleepy = 0
@@ -542,7 +549,10 @@
 	return
 
 /datum/reagent/drink/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
-	M.nutrition += nutrition * removed
+	if(nutrition)
+		M.adjust_nutrition(nutrition * removed)
+	if(hydration)
+		M.adjust_hydration(hydration * removed)
 	M.dizziness = max(0, M.dizziness + adj_dizzy)
 	M.drowsyness = max(0, M.drowsyness + adj_drowsy)
 	M.sleeping = max(0, M.sleeping + adj_sleepy)

@@ -7,8 +7,8 @@
 	pass_flags = PASS_FLAG_TABLE
 	health = 100
 	maxHealth = 100
-	mob_size = MOB_TINY
-	species_language = "Xenophage"
+	mob_size = 4
+	species_language = LANGUAGE_XENOPHAGE
 	see_in_dark = 8
 
 	var/dead_icon
@@ -31,7 +31,7 @@
 	if(language)
 		add_language(language)
 
-	gender = FEMALE
+	gender = NEUTER
 
 	..()
 

@@ -81,9 +81,6 @@
 /area/map_template/colony/tcomms)
 "an" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/organ/internal/stack,
-/obj/item/organ/internal/stack,
-/obj/item/organ/internal/stack,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
@@ -210,17 +207,17 @@
 /area/map_template/colony/surgery)
 "aH" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/fusion/core_control,
-/obj/item/weapon/circuitboard/fusion_core,
-/obj/item/weapon/circuitboard/fusion_fuel_compressor,
-/obj/item/weapon/circuitboard/fusion_fuel_control,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/gyrotron_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion/core_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_core,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_compressor,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/gyrotron_control,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
@@ -1900,12 +1897,13 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 7664;
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
 	output_tag = "cn2o";
-	sensors = list("c1" = "Tank")
+	sensor_name = "Nitrogen Tank";
+	sensor_tag = "c1"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -2380,13 +2378,13 @@
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module/adv,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2726,12 +2724,13 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 7663;
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
 	output_tag = "co2o";
-	sensors = list("c2" = "Tank")
+	sensor_name = "Oxygen Tank";
+	sensor_tag = "c2"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -2819,12 +2818,13 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 7662;
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
 	output_tag = "cco2o";
-	sensors = list("c3" = "Tank")
+	sensor_name = "Carbon Dioxide Tank";
+	sensor_tag = "c3"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -3704,7 +3704,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)
 "gG" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)

@@ -10,9 +10,10 @@
 	syllables = list("sss","sSs","SSS")
 	machine_understands = 0
 	shorthand = "Xeno"
+	hidden_from_codex = TRUE
 
 /datum/language/xenos
-	name = LANGUAGE_XENOPHAGE_HIVE
+	name = LANGUAGE_XENOPHAGE_GLOBAL
 	desc = "Xenophages have the strange ability to commune over a psychic hivemind."
 	speech_verb = "шипит"
 	ask_verb = "шипит"
@@ -21,6 +22,7 @@
 	key = "a"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	hidden_from_codex = TRUE
 
 /datum/language/xenos/check_special_condition(var/mob/other)
 
@@ -33,13 +35,14 @@
 	return 0
 
 /datum/language/ling
-	name = "Changeling"
+	name = LANGUAGE_CHANGELING_GLOBAL
 	desc = "Although they are normally wary and suspicious of each other, changelings can commune over a distance."
 	speech_verb = "говорит"
 	colour = "changeling"
 	key = "g"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	hidden_from_codex = TRUE
 
 /datum/language/ling/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
 
@@ -49,7 +52,7 @@
 		..(speaker,message)
 
 /datum/language/corticalborer
-	name = "Cortical Link"
+	name = LANGUAGE_BORER_GLOBAL
 	desc = "Cortical borers possess a strange link between their tiny minds."
 	speech_verb = "поет"
 	ask_verb = "поет"
@@ -58,6 +61,7 @@
 	key = "z"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	hidden_from_codex = TRUE
 
 /datum/language/corticalborer/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
 
@@ -119,6 +123,7 @@
 		"d'rekkathnor", "khari'd", "gual'te", "nikka", "nikt'o", "barada", "kla'atu", "barhah", "hra" ,"zar'garis")
 	machine_understands = 0
 	shorthand = "CT"
+	hidden_from_codex = TRUE
 
 /datum/language/cult
 	name = LANGUAGE_CULT_GLOBAL
@@ -130,6 +135,7 @@
 	key = "y"
 	flags = RESTRICTED | HIVEMIND
 	shorthand = "N/A"
+	hidden_from_codex = TRUE
 
 /datum/language/alium
 	name = LANGUAGE_ALIUM
@@ -142,6 +148,7 @@
 	"eg","bog","voijs","nekks","bollos","qoulsan","borrksakja","neemen","aka","nikka","qyegno","shafra","beolas","Byno")
 	machine_understands = 0
 	shorthand = "AL"
+	hidden_from_codex = TRUE
 
 /datum/language/alium/New()
 	speech_verb = pick("шипит","ворчит","свистит","булькает","щебечет","визжит","трещит","щелкает")

@@ -4,6 +4,7 @@
 	icon = 'infinity/icons/obj/machines/shielding.dmi'
 	icon_state = "generator0"
 	density = 1
+	base_type = /obj/machinery/power/shield_generator
 	var/datum/wires/shield_generator/wires
 	var/list/field_segments = list()	// List of all shield segments owned by this generator.
 	var/list/damaged_segments = list()	// List of shield segments that have failed and are currently regenerating.
@@ -37,13 +38,6 @@
 
 /obj/machinery/power/shield_generator/New()
 	..()
-	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/shield_generator(src)
-	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)			// Capacitor. Improves shield mitigation when better part is used.
-	component_parts += new /obj/item/weapon/stock_parts/micro_laser(src)
-	component_parts += new /obj/item/weapon/smes_coil(src)						// SMES coil. Improves maximal shield energy capacity.
-	component_parts += new /obj/item/weapon/stock_parts/console_screen(src)
-	RefreshParts()
 	connect_to_network()
 	wires = new(src)
 
@@ -64,16 +58,15 @@
 
 /obj/machinery/power/shield_generator/RefreshParts()
 	max_energy = 0
-	for(var/obj/item/weapon/smes_coil/S in component_parts)
+	for(var/obj/item/weapon/stock_parts/smes_coil/S in component_parts)
 		max_energy += (S.ChargeCapacity / CELLRATE)
 	current_energy = between(0, current_energy, max_energy)
 
-	mitigation_max = MAX_MITIGATION_BASE
-	for(var/obj/item/weapon/stock_parts/capacitor/C in component_parts)
-		mitigation_max += MAX_MITIGATION_RESEARCH * C.rating
+	mitigation_max = MAX_MITIGATION_BASE + MAX_MITIGATION_RESEARCH * total_component_rating_of_type(/obj/item/weapon/stock_parts/capacitor)
 	mitigation_em = between(0, mitigation_em, mitigation_max)
 	mitigation_physical = between(0, mitigation_physical, mitigation_max)
 	mitigation_heat = between(0, mitigation_heat, mitigation_max)
+	..()
 
 
 // Shuts down the shield, removing all shield segments and unlocking generator settings.
@@ -172,28 +165,21 @@
 	else if (field_integrity() > 25)
 		overloaded = 0
 
+/obj/machinery/power/shield_generator/components_are_accessible(path)
+	return !running && ..()
+
+/obj/machinery/power/shield_generator/cannot_transition_to(state_path)
+	if(running)
+		return SPAN_NOTICE("Turn off \the [src] first!")
+	if(offline_for)
+		return SPAN_NOTICE("Wait until \the [src] cools down from emergency shutdown first!")
+	return ..()
 
 /obj/machinery/power/shield_generator/attackby(obj/item/O as obj, mob/user as mob)
 	if(panel_open && isMultitool(O) || isWirecutter(O))
 		attack_hand(user)
-		return
-
-	if(default_deconstruction_screwdriver(user, O))
-		return
-
-	// Prevents dismantle-rebuild tactics to reset the emergency shutdown timer.
-	if(running)
-		to_chat(user, "Turn off \the [src] first!")
-		return
-	if(offline_for)
-		to_chat(user, "Wait until \the [src] cools down from emergency shutdown first!")
-		return
-
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
-
+		return TRUE
+	return component_attackby(O, user)
 
 /obj/machinery/power/shield_generator/proc/energy_failure()
 	if(running == SHIELD_DISCHARGING)
@@ -237,6 +223,8 @@
 
 
 /obj/machinery/power/shield_generator/attack_hand(var/mob/user)
+	if(component_attackby(user))
+		return TRUE
 	ui_interact(user)
 	if(panel_open)
 		wires.Interact(user)

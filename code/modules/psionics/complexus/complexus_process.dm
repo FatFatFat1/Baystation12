@@ -4,6 +4,7 @@
 
 	var/last_rating = rating
 	var/highest_faculty
+	var/highest_rank = 0
 	var/combined_rank = 0
 	for(var/faculty in ranks)
 		var/check_rank = get_rank(faculty)
@@ -14,14 +15,19 @@
 				ranks -= faculty
 			LAZYREMOVE(latencies, faculty)
 		combined_rank += check_rank
-		if(!highest_faculty || get_rank(highest_faculty) < check_rank)
+		if(!highest_faculty || highest_rank < check_rank)
 			highest_faculty = faculty
+			highest_rank = check_rank
 
 	UNSETEMPTY(latencies)
 
 	if(force || last_rating != ceil(combined_rank/ranks.len))
-		rebuild_power_cache = TRUE
-		if(combined_rank > 0)
+		if(highest_rank <= 1)
+			if(highest_rank == 0)
+				qdel(src)
+			return
+		else
+			rebuild_power_cache = TRUE
 			sound_to(owner, 'sound/effects/psi/power_unlock.ogg')
 			rating = ceil(combined_rank/ranks.len)
 			cost_modifier = 1
@@ -52,12 +58,13 @@
 					aura_color = "#33cc33"
 				else if(highest_faculty == PSI_ENERGISTICS)
 					aura_color = "#cccc33"
-		else
-			qdel(src)
 
 	if(!announced && owner && owner.client && !QDELETED(src))
 		announced = TRUE
-		owner.announce_psionics()
+		to_chat(owner, "<hr>")
+		to_chat(owner, SPAN_NOTICE("<font size = 3>You are <b>psionic</b>, touched by powers beyond understanding.</font>"))
+		to_chat(owner, SPAN_NOTICE("<b>Shift-left-click your Psi icon</b> on the bottom right to <b>view a summary of how to use them</b>, or <b>left click</b> it to <b>suppress or unsuppress</b> your psionics. Beware: overusing your gifts can have <b>deadly consequences</b>."))
+		to_chat(owner, "<hr>")
 
 /datum/psi_complexus/Process()
 
@@ -157,12 +164,13 @@
 			// Heal organ damage.
 			for(var/obj/item/organ/I in H.internal_organs)
 
-				if(BP_IS_ROBOTIC(I))
+				if(BP_IS_ROBOTIC(I) || BP_IS_CRYSTAL(I))
 					continue
 
 				if(I.damage > 0 && spend_power(heal_rate))
 					I.damage = max(I.damage - heal_rate, 0)
-					to_chat(H, SPAN_NOTICE("Your innards itch as your autoredactive faculty mends your [I.name]."))
+					if(prob(25))
+						to_chat(H, SPAN_NOTICE("Your innards itch as your autoredactive faculty mends your [I.name]."))
 					return
 
 			// Heal broken bones.
@@ -193,8 +201,9 @@
 						for(var/datum/wound/W in E.wounds)
 
 							if(W.bleeding() && spend_power(heal_rate))
-								to_chat(H, SPAN_NOTICE("Your autoredactive faculty knits together severed veins, stemming the bleeding from your [E.name]."))
+								to_chat(H, SPAN_NOTICE("Your autoredactive faculty knits together severed veins, stemming the bleeding from \a [W.desc] on your [E.name]."))
 								W.bleed_timer = 0
+								W.clamped = TRUE
 								E.status &= ~ORGAN_BLEEDING
 								return
 
@@ -202,12 +211,14 @@
 	if(heal_poison)
 
 		if(owner.radiation && spend_power(heal_rate))
-			to_chat(owner, SPAN_NOTICE("Your autoredactive faculty repairs some of the radiation damage to your body."))
+			if(prob(25))
+				to_chat(owner, SPAN_NOTICE("Your autoredactive faculty repairs some of the radiation damage to your body."))
 			owner.radiation = max(0, owner.radiation - heal_rate)
 			return
 
 		if(owner.getCloneLoss() && spend_power(heal_rate))
-			to_chat(owner, SPAN_NOTICE("Your autoredactive faculty stitches together some of your mangled DNA."))
+			if(prob(25))
+				to_chat(owner, SPAN_NOTICE("Your autoredactive faculty stitches together some of your mangled DNA."))
 			owner.adjustCloneLoss(-heal_rate)
 			return
 
@@ -216,4 +227,5 @@
 		owner.adjustBruteLoss(-(heal_rate))
 		owner.adjustFireLoss(-(heal_rate))
 		owner.adjustOxyLoss(-(heal_rate))
-		to_chat(owner, SPAN_NOTICE("Your skin crawls as your autoredactive faculty heals your body."))
+		if(prob(25))
+			to_chat(owner, SPAN_NOTICE("Your skin crawls as your autoredactive faculty heals your body."))

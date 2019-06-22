@@ -82,7 +82,6 @@
 		ui.open()
 
 /obj/machinery/computer/centrifuge/Process()
-	..()
 	if (stat & (NOPOWER|BROKEN)) return
 
 	if (curing)

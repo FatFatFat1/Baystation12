@@ -123,9 +123,6 @@
 		update_coverage()
 	return internal_process()
 
-/obj/machinery/camera/proc/internal_process()
-	return
-
 /obj/machinery/camera/emp_act(severity)
 	if(!isEmpProof() && prob(100/severity))
 		if(!affected_by_emp_until || (world.time < affected_by_emp_until))
@@ -136,7 +133,7 @@
 			triggerCameraAlarm()
 			update_icon()
 			update_coverage()
-			START_PROCESSING(SSmachines, src)
+			START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/camera/bullet_act(var/obj/item/projectile/P)
 	take_damage(P.get_structure_damage())

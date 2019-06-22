@@ -36,10 +36,10 @@
 	use_overmap = 1
 	num_exoplanets = 1
 
-	playable = 1
-	recommended_players = 40
+	playable = 1 //INF
+	recommended_players = 40 //INF
 
-	away_site_budget = 2
+	away_site_budget = 3
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
 
 /datum/map/torch/setup_map()
@@ -47,13 +47,13 @@
 	system_name = generate_system_name()
 	minor_announcement = new(new_sound = sound('sound/AI/torch/commandreport.ogg', volume = 45))
 /* see torch_inf
-/datum/map/torch/map_info(victim)
+/datum/map/torch/get_map_info(victim)
 	. = list()
 	. +=  "You're aboard the <b>[station_name]</b>, an Expeditionary Corps starship. Its primary mission is looking for undiscovered sapient alien species, and general exploration along the way."
 	. +=  "The vessel is staffed with a mix of SCG government personnel and hired contractors."
 	. +=  "This area of space is uncharted, away from SCG territory. You might encounter remote outposts or drifting hulks, but no recognized government holds claim on this sector."
 	return jointext(., "<br>")
-
+*/
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Sensor Readings:</font><br>"
 	welcome_text += "Report generated on [stationdate2text()] at [stationtime2text()]</center><br /><br />"
@@ -92,9 +92,6 @@
 
 	post_comm_message("SEV Torch Sensor Readings", welcome_text)
 	minor_announcement.Announce(message = "New [GLOB.using_map.company_name] Update available at all communication consoles.")
-*/
-/turf/simulated/wall //landlubbers go home
-	name = "bulkhead"
 
 /turf/simulated/floor
 	name = "bare deck"

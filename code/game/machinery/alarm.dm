@@ -1043,7 +1043,7 @@ FIRE ALARM
 			src.alarm()
 			src.time = 0
 			src.timing = 0
-			STOP_PROCESSING(SSmachines, src)
+			STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 		src.updateDialog()
 	last_process = world.timeofday
 
@@ -1111,7 +1111,7 @@ FIRE ALARM
 	else if (href_list["time"])
 		src.timing = text2num(href_list["time"])
 		last_process = world.timeofday
-		START_PROCESSING(SSmachines, src)
+		START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 		. = TOPIC_REFRESH
 	else if (href_list["tp"])
 		var/tp = text2num(href_list["tp"])

@@ -3,7 +3,7 @@
 	icon_keyboard = "teleport_key"
 	icon_screen = "teleport"
 	light_color = "#77fff8"
-	//circuit = /obj/item/weapon/circuitboard/sensors
+	//circuit = /obj/item/weapon/stock_parts/circuitboard/sensors
 	var/obj/machinery/shipsensors/sensors
 	var/viewing = 0
 	var/list/viewers
@@ -238,7 +238,6 @@
 	queue_icon_update()
 
 /obj/machinery/shipsensors/Process()
-	..()
 	if(use_power) //can't run in non-vacuum
 		if(!in_vacuum())
 			toggle()

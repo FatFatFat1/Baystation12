@@ -7,7 +7,6 @@
 #define MATERIAL_DIAMOND                 "diamond"
 #define MATERIAL_PHORON                  "phoron"
 #define MATERIAL_URANIUM                 "uranium"
-#define MATERIAL_COTTON                  "cotton"
 #define MATERIAL_CRYSTAL                 "crystal"
 #define MATERIAL_SANDSTONE               "sandstone"
 #define MATERIAL_LEATHER                 "leather"
@@ -58,6 +57,7 @@
 #define MATERIAL_EBONY                   "ebony"
 #define MATERIAL_WALNUT                  "walnut"
 #define MATERIAL_BAMBOO                  "bamboo"
+#define MATERIAL_YEW                     "yew"
 
 #define DEFAULT_WALL_MATERIAL      MATERIAL_STEEL
 #define DEFAULT_FURNITURE_MATERIAL MATERIAL_ALUMINIUM

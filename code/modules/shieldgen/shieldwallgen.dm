@@ -117,6 +117,7 @@
 	return 1
 
 /obj/machinery/shieldwallgen/Process()
+	..()
 	power = 0
 	if(!(stat & BROKEN))
 		power()

@@ -154,6 +154,9 @@ var/list/airlock_overlays = list()
 /obj/machinery/door/airlock/civilian
 	stripe_color = COLOR_CIVIE_GREEN
 
+/obj/machinery/door/airlock/chaplain
+	stripe_color = COLOR_GRAY20
+
 /obj/machinery/door/airlock/freezer
 	name = "Freezer Airlock"
 	door_color = COLOR_WHITE
@@ -222,6 +225,9 @@ var/list/airlock_overlays = list()
 
 /obj/machinery/door/airlock/glass/civilian
 	stripe_color = COLOR_CIVIE_GREEN
+
+/obj/machinery/door/airlock/glass/chaplain
+	stripe_color = COLOR_GRAY20
 
 /obj/machinery/door/airlock/external
 	airlock_type = "External"
@@ -975,16 +981,14 @@ About the new airlock wires panel:
 
 	if(isWelder(item))
 		var/obj/item/weapon/weldingtool/WT = item
-		if(!WT.isOn())
-			return 0
 		if(!WT.remove_fuel(0,user))
-			to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 			return 0
 		cut_verb = "cutting"
 		cut_sound = 'sound/items/Welder.ogg'
 	else if(istype(item,/obj/item/weapon/gun/energy/plasmacutter)) //They could probably just shoot them out, but who cares!
 		var/obj/item/weapon/gun/energy/plasmacutter/cutter = item
-		cutter.slice(user)
+		if(!cutter.slice(user))
+			return 0
 		cut_verb = "cutting"
 		cut_sound = 'sound/items/Welder.ogg'
 		cut_delay *= 0.66
@@ -1198,7 +1202,7 @@ About the new airlock wires panel:
 	da.update_state()
 
 	if(operating == -1 || (stat & BROKEN))
-		new /obj/item/weapon/circuitboard/broken(src.loc)
+		new /obj/item/weapon/stock_parts/circuitboard/broken(src.loc)
 		operating = 0
 	else
 		if (!electronics)

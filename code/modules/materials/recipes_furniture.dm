@@ -139,6 +139,16 @@ ARMCHAIR(yellow)
 	result_type = /obj/structure/bed
 	req_amount = 2
 
+/datum/stack_recipe/furniture/pew
+	title = "pew, right"
+	result_type = /obj/structure/bed/pew
+	req_amount = 4
+
+/datum/stack_recipe/furniture/pew_left
+	title = "pew, left"
+	result_type = /obj/structure/bed/pew/left
+	req_amount = 4
+
 /datum/stack_recipe/furniture/table_frame
 	title = "table frame"
 	result_type = /obj/structure/table
@@ -159,6 +169,13 @@ ARMCHAIR(yellow)
 	result_type = /obj/machinery/portable_atmospherics/canister
 	req_amount = 10
 	time = 10
+	send_material_data = 0
+
+/datum/stack_recipe/furniture/tank
+	title = "Pressure Tank"
+	result_type = /obj/item/pipe/tank
+	req_amount = 30
+	time = 20
 	send_material_data = 0
 
 /datum/stack_recipe/furniture/computerframe

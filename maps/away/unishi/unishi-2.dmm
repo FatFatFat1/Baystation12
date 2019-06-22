@@ -251,29 +251,29 @@
 /area/unishi/common)
 "aH" = (
 /obj/structure/table/standard,
-/obj/item/weapon/circuitboard/solar_control,
-/obj/item/weapon/circuitboard/roboprinter,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/roboprinter,
 /obj/item/device/bot_kit,
 /turf/simulated/floor,
 /area/unishi/common)
 "aI" = (
 /obj/structure/table/standard,
-/obj/item/weapon/circuitboard/mecha/gygax/main,
+/obj/item/weapon/stock_parts/circuitboard/mecha/gygax/main,
 /obj/item/integrated_circuit/converter/text2num,
 /turf/simulated/floor,
 /area/unishi/common)
 "aJ" = (
 /obj/structure/table/standard,
-/obj/item/weapon/circuitboard/roboprinter,
-/obj/item/weapon/circuitboard/rdserver,
-/obj/item/weapon/circuitboard/helm,
+/obj/item/weapon/stock_parts/circuitboard/roboprinter,
+/obj/item/weapon/stock_parts/circuitboard/rdserver,
+/obj/item/weapon/stock_parts/circuitboard/helm,
 /turf/simulated/floor,
 /area/unishi/common)
 "aK" = (
 /obj/structure/table/standard,
-/obj/item/weapon/circuitboard/robotics,
-/obj/item/weapon/circuitboard/protolathe,
-/obj/item/weapon/circuitboard/helm,
+/obj/item/weapon/stock_parts/circuitboard/robotics,
+/obj/item/weapon/stock_parts/circuitboard/protolathe,
+/obj/item/weapon/stock_parts/circuitboard/helm,
 /turf/simulated/floor,
 /area/unishi/common)
 "aL" = (
@@ -1594,7 +1594,7 @@
 /area/unishi/hydro)
 "dX" = (
 /obj/machinery/r_n_d/circuit_imprinter,
-/obj/item/weapon/circuitboard/mecha/gygax/peripherals,
+/obj/item/weapon/stock_parts/circuitboard/mecha/gygax/peripherals,
 /turf/simulated/floor/tiled,
 /area/unishi/rnd)
 "dY" = (
@@ -2207,7 +2207,7 @@
 /area/unishi/common)
 "fy" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/circuitboard/mecha/gygax/targeting,
+/obj/item/weapon/stock_parts/circuitboard/mecha/gygax/targeting,
 /obj/random/snack,
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor/tiled/dark,
@@ -2402,7 +2402,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/unishi/smresearch)
 "fW" = (
-/obj/machinery/atmospherics/pipe/tank/phoron,
+/obj/machinery/atmospherics/unary/tank/phoron,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
@@ -2428,27 +2428,27 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/unishi/smresearch)
 "fZ" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
 /turf/simulated/floor,
 /area/unishi/smresearch)
 "ga" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide,
 /turf/simulated/floor,
 /area/unishi/smresearch)
 "gb" = (
-/obj/machinery/atmospherics/pipe/tank/hydrogen,
+/obj/machinery/atmospherics/unary/tank/hydrogen,
 /obj/machinery/light/small,
 /turf/simulated/floor,
 /area/unishi/smresearch)
 "gc" = (
-/obj/machinery/atmospherics/pipe/tank/nitrogen,
+/obj/machinery/atmospherics/unary/tank/nitrogen,
 /turf/simulated/floor,
 /area/unishi/smresearch)
 "gd" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /turf/simulated/floor,
 /area/unishi/smresearch)
 "ge" = (
@@ -2794,19 +2794,20 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
-/obj/machinery/computer/general_air_control/supermatter_core{
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
+	dir = 4
+	},
+/obj/machinery/computer/air_control/supermatter_core{
 	dir = 8;
-	frequency = 2002;
+	frequency = 1438;
 	icon_state = "computer";
 	input_tag = "unishi_cooling_in";
 	name = "Supermatter Test Room Cooling Control";
 	output_tag = "unishi_cooling_out";
 	pressure_setting = 100;
-	sensors = list("engine_sensor" = "Engine Core")
-	},
-/obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	sensor_name = "Engine Core";
+	sensor_tag = "engine_sensor"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/unishi/smresearch)

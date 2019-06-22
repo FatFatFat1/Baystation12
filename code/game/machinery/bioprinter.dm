@@ -11,6 +11,7 @@
 	density = 1
 	idle_power_usage = 40
 	active_power_usage = 300
+	construct_state = /decl/machine_construction/default/panel_closed
 
 	var/stored_matter = 0
 	var/max_stored_matter = 0
@@ -21,15 +22,10 @@
 	// These should be subtypes of /obj/item/organ
 	var/list/products = list()
 
-/obj/machinery/organ_printer/attackby(var/obj/item/O, var/mob/user)
-	if(default_deconstruction_screwdriver(user, O))
+/obj/machinery/organ_printer/state_transition(var/decl/machine_construction/default/new_state)
+	. = ..()
+	if(istype(new_state))
 		updateUsrDialog()
-		return
-	if(default_deconstruction_crowbar(user, O))
-		return
-	if(default_part_replacement(user, O))
-		return
-	return ..()
 
 /obj/machinery/organ_printer/on_update_icon()
 	overlays.Cut()
@@ -38,32 +34,30 @@
 	if(printing)
 		overlays += "[icon_state]_working"
 
-/obj/machinery/organ_printer/Initialize()
-	. = ..()
-	component_parts = list()
-	component_parts += new circuit
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
-	RefreshParts()
-
 /obj/machinery/organ_printer/examine(var/mob/user)
 	. = ..()
 	to_chat(user, "<span class='notice'>It is loaded with [stored_matter]/[max_stored_matter] matter units.</span>")
 
 /obj/machinery/organ_printer/RefreshParts()
 	print_delay = initial(print_delay)
-	max_stored_matter = 0
-	for(var/obj/item/weapon/stock_parts/matter_bin/bin in component_parts)
-		max_stored_matter += bin.rating * 50
-	for(var/obj/item/weapon/stock_parts/manipulator/manip in component_parts)
-		print_delay -= (manip.rating-1)*10
-	print_delay = max(0,print_delay)
+	print_delay -= 10 * total_component_rating_of_type(/obj/item/weapon/stock_parts/manipulator)
+	print_delay += 10 * number_of_components(/obj/item/weapon/stock_parts/manipulator)
+	print_delay = max(0, print_delay)
+
+	max_stored_matter = 50 * Clamp(total_component_rating_of_type(/obj/item/weapon/stock_parts/matter_bin), 0, 20)
 	. = ..()
 
-/obj/machinery/organ_printer/attack_hand(mob/user, var/choice = null)
+/obj/machinery/organ_printer/components_are_accessible(path)
+	return !printing && ..()
 
+/obj/machinery/organ_printer/cannot_transition_to(path)
+	if(printing)
+		return SPAN_NOTICE("You must wait for \the [src] to finish printing first!")
+	return ..()
+
+/obj/machinery/organ_printer/attack_hand(mob/user, var/choice = null)
+	if(component_attack_hand(user))
+		return TRUE
 	if(printing || (stat & (BROKEN|NOPOWER)))
 		return
 
@@ -111,7 +105,7 @@
 	name = "prosthetic organ fabricator"
 	desc = "It's a machine that prints prosthetic organs."
 	icon_state = "roboprinter"
-	circuit = /obj/item/weapon/circuitboard/roboprinter
+	base_type = /obj/machinery/organ_printer/robot
 
 	products = list(
 		BP_HEART    = list(/obj/item/organ/internal/heart,      25),
@@ -172,9 +166,12 @@
 	name = "bioprinter"
 	desc = "It's a machine that prints replacement organs."
 	icon_state = "bioprinter"
-	circuit = /obj/item/weapon/circuitboard/bioprinter
-	var/list/amount_list
-	var/loaded_dna //Blood sample for DNA hashing.
+	base_type = /obj/machinery/organ_printer/flesh
+	var/list/amount_list = list(
+		/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
+		/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15
+		)
+	var/datum/dna/loaded_dna_datum
 	var/datum/species/loaded_species //For quick refrencing
 
 /obj/machinery/organ_printer/flesh/Initialize()
@@ -193,61 +190,15 @@
 			new /obj/item/weapon/reagent_containers/food/snacks/meat(T)
 	return ..()
 
-/obj/machinery/organ_printer/flesh/RefreshParts()
-	. = ..()
-	var/Eat
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
-		Eat += M.rating
-
-	desc = initial(desc)
-	switch(Eat)
-		if(0 to 3)
-			amount_list = list(
-				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
-				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15
-				)
-		if(4 to 5)
-			amount_list = list(
-				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
-				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15,
-				/obj/item/organ/internal = 10
-				)
-			desc += "<br>It is capable of recycling internal organs."
-		else
-			amount_list = list(
-				/obj/item/weapon/reagent_containers/food/snacks/meat = 50,
-				/obj/item/weapon/reagent_containers/food/snacks/rawcutlet = 15,
-				/obj/item/organ/internal = 10,
-				/obj/item/organ/external/arm = 30,
-				/obj/item/organ/external/hand = 20,
-				/obj/item/organ/external/leg = 30,
-				/obj/item/organ/external/foot = 20
-				)
-			desc += "<br>It is capable of recycling limbs and internal organs."
-
-/obj/machinery/organ_printer/flesh/New()
-	..()
-	component_parts = list()
-	component_parts += new circuit
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
-	component_parts += new /obj/item/weapon/stock_parts/manipulator
-	component_parts += new /obj/item/device/scanner/health
-	component_parts += new /obj/item/weapon/circuitboard/bioprinter
-	RefreshParts()
-
 /obj/machinery/organ_printer/flesh/print_organ(var/choice)
 	var/obj/item/organ/O
-	var/weakref/R = loaded_dna["donor"]
-	var/mob/living/carbon/human/H = R.resolve()
 	var/new_organ
 	if(loaded_species.has_organ[choice])
 		new_organ = loaded_species.has_organ[choice]
 	else if(loaded_species.has_limbs[choice])
 		new_organ = loaded_species.has_limbs[choice]["path"]
 	if(new_organ)
-		O = new new_organ(get_turf(src), H.dna)
+		O = new new_organ(get_turf(src), loaded_dna_datum)
 		O.status |= ORGAN_CUT_AWAY
 	else
 		O = ..()
@@ -259,7 +210,7 @@
 	return O
 
 /obj/machinery/organ_printer/flesh/attack_hand(mob/user)
-	if(!loaded_dna || !loaded_dna["donor"] || !loaded_species)
+	if(!loaded_dna_datum || !loaded_species)
 		visible_message("<span class='info'>\The [src] displays a warning: 'No DNA saved. Insert a blood sample.'</span>")
 		return
 
@@ -293,15 +244,17 @@
 	if(istype(W,/obj/item/weapon/reagent_containers/syringe))
 		var/obj/item/weapon/reagent_containers/syringe/S = W
 		var/datum/reagent/blood/injected = locate() in S.reagents.reagent_list //Grab some blood
-		if(injected && injected.data)
-			loaded_dna = injected.data
-			to_chat(user, "<span class='info'>You inject the blood sample into the bioprinter.</span>")
-		var/weakref/R = loaded_dna["donor"]
-		var/mob/living/carbon/human/H = R.resolve()
-		if(H && istype(H) && H.species)
-			loaded_species = H.species
-			products = get_possible_products()
-		return
+		if(injected && LAZYLEN(injected.data))
+			var/loaded_dna = injected.data
+			var/weakref/R = loaded_dna["donor"]
+			var/mob/living/carbon/human/H = R.resolve()
+			if(H && istype(H) && H.species && H.dna)
+				loaded_species = H.species
+				loaded_dna_datum = H.dna && H.dna.Clone()
+				products = get_possible_products()
+				to_chat(user, "<span class='info'>You inject the blood sample into the bioprinter.</span>")
+				return TRUE
+		to_chat(user, SPAN_NOTICE("\The [src] displays an error: no viable blood sample could be obtained from \the [W]."))
 	return ..()
 
 /obj/machinery/organ_printer/flesh/proc/get_possible_products()

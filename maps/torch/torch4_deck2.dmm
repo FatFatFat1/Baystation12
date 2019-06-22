@@ -341,18 +341,18 @@
 "aH" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/helm,
+/obj/item/weapon/stock_parts/circuitboard/helm,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "aI" = (
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_diffuser,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
-/obj/item/weapon/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_diffuser,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
+/obj/item/weapon/stock_parts/circuitboard/shield_generator,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -360,8 +360,8 @@
 "aJ" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/borgupload,
-/obj/item/weapon/circuitboard/aiupload,
+/obj/item/weapon/stock_parts/circuitboard/borgupload,
+/obj/item/weapon/stock_parts/circuitboard/aiupload,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "aL" = (
@@ -541,10 +541,10 @@
 	dir = 8;
 	pixel_x = 21
 	},
-/obj/item/weapon/circuitboard/teleporter,
-/obj/item/weapon/circuitboard/protolathe,
-/obj/item/weapon/circuitboard/destructive_analyzer,
-/obj/item/weapon/circuitboard/rdconsole,
+/obj/item/weapon/stock_parts/circuitboard/teleporter,
+/obj/item/weapon/stock_parts/circuitboard/protolathe,
+/obj/item/weapon/stock_parts/circuitboard/destructive_analyzer,
+/obj/item/weapon/stock_parts/circuitboard/rdconsole,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "aZ" = (
@@ -764,11 +764,11 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "bz" = (
-/obj/item/weapon/circuitboard/telecomms/processor,
-/obj/item/weapon/circuitboard/telecomms/receiver,
-/obj/item/weapon/circuitboard/telecomms/server,
-/obj/item/weapon/circuitboard/telecomms/bus,
-/obj/item/weapon/circuitboard/telecomms/broadcaster,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/processor,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/receiver,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/server,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/bus,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/broadcaster,
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -788,8 +788,8 @@
 "bB" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/mecha_control,
-/obj/item/weapon/circuitboard/robotics,
+/obj/item/weapon/stock_parts/circuitboard/mecha_control,
+/obj/item/weapon/stock_parts/circuitboard/robotics,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "bC" = (
@@ -1043,9 +1043,9 @@
 "ca" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/atmos_alert,
-/obj/item/weapon/circuitboard/powermonitor,
-/obj/item/weapon/circuitboard/stationalert,
+/obj/item/weapon/stock_parts/circuitboard/atmos_alert,
+/obj/item/weapon/stock_parts/circuitboard/powermonitor,
+/obj/item/weapon/stock_parts/circuitboard/stationalert,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "cc" = (
@@ -1275,7 +1275,7 @@
 "cC" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/rdserver,
+/obj/item/weapon/stock_parts/circuitboard/rdserver,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "cD" = (
@@ -1670,9 +1670,9 @@
 "dF" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/holodeckcontrol,
-/obj/item/weapon/circuitboard/mech_recharger,
-/obj/item/weapon/circuitboard/solar_control,
+/obj/item/weapon/stock_parts/circuitboard/holodeckcontrol,
+/obj/item/weapon/stock_parts/circuitboard/mech_recharger,
+/obj/item/weapon/stock_parts/circuitboard/solar_control,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "dG" = (
@@ -2027,8 +2027,8 @@
 "ej" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/circuitboard/arcade/battle,
-/obj/item/weapon/circuitboard/arcade/orion_trail,
+/obj/item/weapon/stock_parts/circuitboard/arcade/battle,
+/obj/item/weapon/stock_parts/circuitboard/arcade/orion_trail,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
@@ -2941,7 +2941,7 @@
 /area/hallway/primary/seconddeck)
 "go" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/pipe/tank/hydrogen,
+/obj/machinery/atmospherics/unary/tank/hydrogen,
 /turf/simulated/floor/plating,
 /area/maintenance/incinerator)
 "gp" = (
@@ -3131,7 +3131,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/escape_pod11/station)
 "gJ" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/escape_pod11/station)
 "gK" = (
@@ -4622,10 +4622,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/teleporter/seconddeck)
 "jY" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
+	sensor_tag = "o2_sensor"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -7235,12 +7235,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/supermatter_core{
+/obj/machinery/computer/air_control/supermatter_core{
 	name = "Engine Cooling Control";
 	icon_state = "computer";
 	dir = 8;
 	frequency = 1438;
-	sensors = list("engine_sensor" = "Engine Core");
+	sensor_tag = "engine_sensor";
+	sensor_name = "Engine Core";
 	input_tag = "cooling_in";
 	output_tag = "cooling_out";
 	pressure_setting = 100
@@ -7618,7 +7619,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Engineering Bay";
-	sortType = "Engineering Bay"
+	sort_type = "Engineering Bay"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9141,8 +9142,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "co2_sensor";
-	output = 127
+	id_tag = "co2_sensor"
 	},
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/engineering/atmos)
@@ -9468,12 +9468,13 @@
 	dir = 2;
 	icon_state = "intact"
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	name = "Carbon Dioxide Supply Control";
 	icon_state = "computer";
 	dir = 8;
 	frequency = 1441;
-	sensors = list("co2_sensor" = "Tank");
+	sensor_tag = "co2_sensor";
+	sensor_name = "Carbon Dioxide Supply";
 	input_tag = "co2_in";
 	output_tag = "co2_out"
 	},
@@ -10318,7 +10319,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/shuttle/escape_pod10/station)
 "xZ" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -10484,8 +10485,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "n2_sensor";
-	output = 127
+	id_tag = "n2_sensor"
 	},
 /turf/simulated/floor/reinforced/nitrogen,
 /area/engineering/atmos)
@@ -10654,7 +10654,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "yU" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 2;
 	volume = 3200
 	},
@@ -10903,8 +10903,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "n2o_sensor";
-	output = 127
+	id_tag = "n2o_sensor"
 	},
 /turf/simulated/floor/reinforced/n20,
 /area/engineering/atmos)
@@ -10941,7 +10940,18 @@
 /turf/simulated/floor/plating,
 /area/maintenance/incinerator)
 "zE" = (
-/obj/machinery/atmospherics/trinary/mixer,
+/obj/machinery/atmospherics/omni/mixer{
+	active_power_usage = 7500;
+	tag_east = 0;
+	tag_east_con = null;
+	tag_north = 1;
+	tag_north_con = 0.5;
+	tag_south = 2;
+	tag_south_con = null;
+	tag_west = 1;
+	tag_west_con = 0.5;
+	use_power = 1
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/incinerator)
 "zF" = (
@@ -11213,7 +11223,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
 "Ai" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -11306,13 +11316,14 @@
 	dir = 2;
 	icon_state = "intact"
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 8;
 	frequency = 1441;
 	input_tag = "h2_in";
 	name = "Hydrogen Supply Control";
 	output_tag = "h2_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensor_tag = "tox_sensor";
+	sensor_name = "Hydrogen Supply"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -11789,8 +11800,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "o2_sensor";
-	output = 127
+	id_tag = "o2_sensor"
 	},
 /turf/simulated/floor/reinforced/oxygen,
 /area/engineering/atmos)
@@ -12785,13 +12795,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/research)
 "DZ" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 4;
 	frequency = 1441;
 	input_tag = "waste_in";
 	name = "Waste Tank Control";
 	output_tag = "waste_out";
-	sensors = list("waste_sensor" = "Tank")
+	sensor_tag = "waste_sensor";
+	sensor_name = "Waste Tank"
 	},
 /obj/machinery/light{
 	icon_state = "tube1";
@@ -13362,8 +13373,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "waste_sensor";
-	output = 127
+	id_tag = "waste_sensor"
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/engineering/wastetank)
@@ -13576,12 +13586,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/fuelbay)
 "FE" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 1441;
 	input_tag = "fuel_in";
 	name = "Fuel Supply Control";
 	output_tag = "fuel_out";
-	sensors = list("fuel_sensor" = "Tank")
+	sensor_tag = "fuel_sensor";
+	sensor_name = "Fuel Tank"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/fuelbay)
@@ -14107,13 +14118,14 @@
 	dir = 2;
 	icon_state = "intact"
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 8;
 	frequency = 1441;
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor" = "Tank")
+	sensor_tag = "n2o_sensor";
+	sensor_name = "Nitrous Oxide Supply"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -15160,7 +15172,7 @@
 "Lk" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/message_monitor,
+/obj/item/weapon/stock_parts/circuitboard/message_monitor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "Ll" = (
@@ -15734,14 +15746,14 @@
 "Nn" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/circuitboard/autolathe,
-/obj/item/weapon/circuitboard/unary_atmos/cooler,
-/obj/item/weapon/circuitboard/unary_atmos/heater,
-/obj/item/weapon/circuitboard/unary_atmos/engine,
-/obj/item/weapon/circuitboard/unary_atmos/engine,
-/obj/item/weapon/circuitboard/unary_atmos/engine,
-/obj/item/weapon/circuitboard/unary_atmos/engine,
-/obj/item/weapon/circuitboard/oxyregenerator,
+/obj/item/weapon/stock_parts/circuitboard/autolathe,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/cooler,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/heater,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/engine,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/engine,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/engine,
+/obj/item/weapon/stock_parts/circuitboard/unary_atmos/engine,
+/obj/item/weapon/stock_parts/circuitboard/oxyregenerator,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/tech)
 "No" = (
@@ -15991,7 +16003,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Drone Fabrication";
-	sortType = "Drone Fabrication"
+	sort_type = "Drone Fabrication"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -16446,8 +16458,7 @@
 	},
 /obj/machinery/air_sensor{
 	frequency = 1441;
-	id_tag = "tox_sensor";
-	output = 127
+	id_tag = "tox_sensor"
 	},
 /turf/simulated/floor/reinforced/hydrogen,
 /area/engineering/atmos)
@@ -16624,13 +16635,14 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 1;
 	frequency = 1441;
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensor_tag = "o2_sensor";
+	sensor_name = "Oxygen Supply"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -17002,13 +17014,14 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 4;
 	frequency = 1441;
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensor_tag = "n2_sensor";
+	sensor_name = "Nitrogen Supply Tank"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/atmos)
@@ -17178,6 +17191,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock,
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/hallway/primary/seconddeck)
 "Sb" = (
@@ -17584,8 +17598,7 @@
 "To" = (
 /obj/machinery/air_sensor{
 	frequency = 1438;
-	id_tag = "engine_sensor";
-	output = 127
+	id_tag = "engine_sensor"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -18030,7 +18043,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/vacant/prototype/engine)
 "Vf" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	dir = 8;
 	input_tag = "rust_injector";
 	name = "R-UST Gas Injection Controls";
@@ -18389,6 +18402,9 @@
 "Wv" = (
 /obj/machinery/vending/engineering,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/camera/network/engineering{
+	c_tag = "Engineering - Locker Room"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/locker_room)
 "Wx" = (

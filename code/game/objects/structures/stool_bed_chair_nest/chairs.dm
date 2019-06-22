@@ -257,7 +257,7 @@
 		occupant.visible_message("<span class='danger'>[occupant] crashed into \the [A]!</span>")
 
 /obj/structure/bed/chair/office/light/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, newmaterial, MATERIAL_COTTON)
+	..(newloc, newmaterial, MATERIAL_CLOTH)
 
 //[inf]
 /obj/structure/bed/chair/office/yellow/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
@@ -360,7 +360,7 @@
 	..(newloc,MATERIAL_STEEL,"black")
 
 /obj/structure/bed/chair/shuttle/white/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,MATERIAL_COTTON)
+	..(newloc,MATERIAL_STEEL,MATERIAL_CLOTH)
 
 /obj/structure/bed/chair/shuttle/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc,"steel","carpet")

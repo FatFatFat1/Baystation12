@@ -96,7 +96,9 @@ Class Procs:
 	var/active_power_usage = 0
 	var/power_channel = EQUIP //EQUIP, ENVIRON or LIGHT
 	var/power_init_complete = FALSE // Helps with bookkeeping when initializing atoms. Don't modify.
-	var/list/component_parts = null //list of all the parts used to build it, if made from certain kinds of frames.
+	var/list/component_parts           //List of component instances. Expected type: /obj/item/weapon/stock_parts
+	var/list/uncreated_component_parts = list(/obj/item/weapon/stock_parts/power/apc) //List of component paths which have delayed init. Indeces = number of components.
+	var/list/maximum_component_parts = list(/obj/item/weapon/stock_parts = 8)         //null - no max. list(type part = number max).
 	var/uid
 	var/panel_open = 0
 	var/global/gl_uid = 1
@@ -105,24 +107,35 @@ Class Procs:
 	var/clickvol = 40		// sound played on succesful interface use
 	var/core_skill = SKILL_DEVICES //The skill used for skill checks for this machine (mostly so subtypes can use different skills).
 	var/operator_skill      // Machines often do all operations on Process(). This caches the user's skill while the operations are running.
+	var/base_type           // For mapped buildable types, set this to be the base type actually buildable.
 
-/obj/machinery/Initialize(mapload, d=0)
+	var/list/processing_parts // Component parts queued for processing by the machine. Expected type: /obj/item/weapon/stock_parts
+	var/processing_flags         // What is being processed
+
+/obj/machinery/Initialize(mapload, d=0, populate_parts = TRUE)
 	. = ..()
 	if(d)
 		set_dir(d)
-	START_PROCESSING(SSmachines, src) // It's safe to remove machines from here.
+	START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF) // It's safe to remove machines from here, but only if base machinery/Process returned PROCESS_KILL.
 	SSmachines.machinery += src // All machines should remain in this list, always.
+	populate_parts(populate_parts)
+	RefreshParts()
 
 /obj/machinery/Destroy()
 	SSmachines.machinery -= src
-	STOP_PROCESSING(SSmachines, src)
-	if(component_parts)
-		for(var/atom/A in component_parts)
-			if(A.loc == src) // If the components are inside the machine, delete them.
-				qdel(A)
-			else // Otherwise we assume they were dropped to the ground during deconstruction, and were not removed from the component_parts list by deconstruction code.
-				component_parts -= A
+	QDEL_NULL_LIST(component_parts) // Further handling is done via destroyed events.
+	STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_ALL)
 	. = ..()
+
+/obj/machinery/proc/ProcessAll(var/wait)
+	if(processing_flags & MACHINERY_PROCESS_COMPONENTS)
+		for(var/thing in processing_parts)
+			var/obj/item/weapon/stock_parts/part = thing
+			if(part.machine_process(src) == PROCESS_KILL)
+				part.stop_processing()
+
+	if((processing_flags & MACHINERY_PROCESS_SELF) && Process(wait) == PROCESS_KILL)
+		STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
 
 /obj/machinery/Process()
 	return PROCESS_KILL // Only process if you need to.
@@ -146,17 +159,12 @@ Class Procs:
 	switch(severity)
 		if(1.0)
 			qdel(src)
-			return
 		if(2.0)
 			if (prob(50))
 				qdel(src)
-				return
 		if(3.0)
 			if (prob(25))
 				qdel(src)
-				return
-		else
-	return
 
 /obj/machinery/proc/set_broken(new_state)
 	if(new_state && !(stat & BROKEN))
@@ -211,8 +219,10 @@ Class Procs:
 		return src.attack_hand(user)
 
 /obj/machinery/attack_hand(mob/user as mob)
-	if(inoperable(MAINT))
-		return 1
+	if(stat & (BROKEN|MAINT))
+		return TRUE
+	if(!interact_offline && (stat & NOPOWER))
+		return TRUE
 	if(user.lying || user.stat)
 		return 1
 	if ( ! (istype(usr, /mob/living/carbon/human) || \
@@ -232,11 +242,14 @@ Class Procs:
 		else if(prob(H.getBrainLoss()))
 			to_chat(user, "<span class='warning'>You momentarily forget how to use \the [src].</span>")
 			return 1
-
+	if((. = component_attack_hand(user)))
+		return
 	return ..()
 
-/obj/machinery/proc/RefreshParts() //Placeholder proc for machines that are built using frames.
-	return
+/obj/machinery/proc/RefreshParts()
+	for(var/thing in component_parts)
+		var/obj/item/weapon/stock_parts/part = thing
+		part.on_refresh(src)
 
 /obj/machinery/proc/assign_uid()
 	uid = gl_uid
@@ -265,68 +278,13 @@ Class Procs:
 		var/area/temp_area = get_area(src)
 		if(temp_area)
 			var/obj/machinery/power/apc/temp_apc = temp_area.get_apc()
+			var/obj/machinery/power/terminal/terminal = temp_apc && temp_apc.terminal()
 
-			if(temp_apc && temp_apc.terminal && temp_apc.terminal.powernet)
-				temp_apc.terminal.powernet.trigger_warning()
+			if(terminal && terminal.powernet)
+				terminal.powernet.trigger_warning()
 		if(user.stunned)
 			return 1
 	return 0
-
-/obj/machinery/proc/default_deconstruction_crowbar(var/mob/user, var/obj/item/weapon/crowbar/C)
-	if(!istype(C))
-		return 0
-	if(!panel_open)
-		return 0
-	. = dismantle()
-
-/obj/machinery/proc/default_deconstruction_screwdriver(var/mob/user, var/obj/item/weapon/screwdriver/S)
-	if(!istype(S))
-		return 0
-	playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
-	panel_open = !panel_open
-	to_chat(user, "<span class='notice'>You [panel_open ? "open" : "close"] the maintenance hatch of \the [src].</span>")
-	update_icon()
-	return 1
-
-/obj/machinery/proc/default_part_replacement(var/mob/user, var/obj/item/weapon/storage/part_replacer/R)
-	var/shouldplaysound = 0
-	if(!istype(R))
-		return 0
-	if(!component_parts)
-		return 0
-	if(panel_open || R.works_from_distance)
-		var/obj/item/weapon/circuitboard/CB = locate(/obj/item/weapon/circuitboard) in component_parts
-		var/P
-		if(R.works_from_distance)
-			to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
-			for(var/var/obj/item/C in component_parts)
-				to_chat(user, "<span class='notice'>	[C.name]</span>")
-		for(var/obj/item/weapon/stock_parts/A in component_parts)
-			for(var/T in CB.req_components)
-				if(ispath(A.type, T))
-					P = T
-					break
-			for(var/obj/item/weapon/stock_parts/B in R.contents)
-				if(istype(B, P) && istype(A, P))
-					if(B.rating > A.rating)
-						R.remove_from_storage(B, src)
-						R.handle_item_insertion(A, 1)
-						component_parts -= A
-						component_parts += B
-						B.forceMove(null)
-						to_chat(user, "<span class='notice'>[A.name] replaced with [B.name].</span>")
-						shouldplaysound = 1 //Only play the sound when parts are actually replaced!
-						break
-			update_icon()
-			RefreshParts()
-	else
-		to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
-		for(var/var/obj/item/C in component_parts)
-			to_chat(user, "<span class='notice'>	[C.name]</span>")
-	if(shouldplaysound)
-		R.play_rped_sound()
-		display_parts(user)
-	return 1
 
 /obj/machinery/proc/dismantle()
 	playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
@@ -334,8 +292,11 @@ Class Procs:
 	M.set_dir(src.dir)
 	M.state = 2
 	M.icon_state = "box_1"
-	for(var/obj/I in component_parts)
-		I.dropInto(loc)
+	for(var/I in component_parts)
+		uninstall_component(I, refresh_parts = FALSE)
+	while(LAZYLEN(uncreated_component_parts))
+		var/path = uncreated_component_parts[1]
+		uninstall_component(path, refresh_parts = FALSE)
 
 	qdel(src)
 	return 1
@@ -377,3 +338,8 @@ Class Procs:
 	. = ..()
 	if(. && !CanFluidPass())
 		fluid_update()
+
+/obj/machinery/get_cell()
+	var/obj/item/weapon/stock_parts/power/battery/battery = get_component_of_type(/obj/item/weapon/stock_parts/power/battery)
+	if(battery)
+		return battery.get_cell()
