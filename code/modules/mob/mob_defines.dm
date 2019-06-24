@@ -193,3 +193,6 @@
 	var/datum/skillset/skillset = /datum/skillset
 
 	var/last_radio_sound = -INFINITY
+
+
+	var/stop_sight_update = 0 //for update_sight() //inf
