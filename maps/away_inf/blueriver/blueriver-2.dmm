@@ -558,7 +558,7 @@
 /obj/machinery/computer/air_control{
 	dir = 2;
 	name = "Atmospheric Sensors";
-	sensors = list("blueriver_out")
+	sensor_tag = "blueriver_out"
 	},
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship/cockpit)

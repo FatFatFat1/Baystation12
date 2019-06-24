@@ -887,7 +887,8 @@
 	input_tag = "fuel_in";
 	name = "Fuel Supply Control";
 	output_tag = "fuel_out";
-	sensors = list("fuel_sensor" = "Tank")
+	sensor_tag = "fuel_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -1494,7 +1495,8 @@
 	input_tag = null;
 	name = "Fuel Nacelles Supply Control";
 	output_tag = "fuel_engines";
-	sensors = list("fuel_sensor" = "Tank")
+	sensor_tag = "fuel_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{

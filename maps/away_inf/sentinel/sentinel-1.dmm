@@ -725,7 +725,8 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensor_tag = "o2_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/atmos)
@@ -768,7 +769,8 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensor_tag = "co2_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/atmos)
@@ -796,7 +798,8 @@
 	input_tag = "emp_in";
 	name = "Empty Chamber Supply Control";
 	output_tag = "emp_out";
-	sensors = list("emp_sensor" = "Tank")
+	sensor_tag = "emp_sensor";
+	sensor_name = "Tank"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor,
@@ -824,7 +827,8 @@
 	input_tag = "h2_in";
 	name = "Hydrogen Supply Control";
 	output_tag = "h2_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensor_tag = "tox_sensor";
+	sensor_name = "Tank")
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
 	icon_state = "map";
@@ -1353,7 +1357,8 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensor_tag = "n2_sensor";
+	sensor_name = "Tank")
 	},
 /turf/simulated/floor,
 /area/ship/patrol/maintenance/atmos)

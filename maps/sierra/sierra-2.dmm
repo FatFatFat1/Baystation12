@@ -8989,7 +8989,8 @@
 	name = "Engine Cooling Control";
 	output_tag = "cooling_out";
 	pressure_setting = 100;
-	sensors = list("engine_sensor" = "Engine Core")
+	sensor_tag = "engine_sensor";
+	sensor_name = "Engine Core"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4;
@@ -10442,7 +10443,8 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensor_tag = "n2_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/corner/red{
 	icon_state = "corner_white";
@@ -11972,7 +11974,8 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensor_tag = "co2_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/corner/black{
 	icon_state = "corner_white";
@@ -13816,7 +13819,6 @@
 /obj/machinery/air_sensor{
 	frequency = 1438;
 	id_tag = "engine_sensor";
-	output = 127
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -22182,7 +22184,8 @@
 	input_tag = "h2_in";
 	name = "Hydrogen Supply Control";
 	output_tag = "h2_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensor_tag = "tox_sensor";
+	sensor_name = "Tank"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	icon_state = "intact";
@@ -24040,7 +24043,8 @@
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor" = "Tank")
+	sensor_tag = "n2o_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/corner/white{
 	icon_state = "corner_white";
@@ -24256,7 +24260,8 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensor_tag = "o2_sensor";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/corner/blue{
 	icon_state = "corner_white";

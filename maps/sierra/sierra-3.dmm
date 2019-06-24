@@ -27816,7 +27816,6 @@
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "xenobot_sensor";
-	output = 63
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/xenoflora_storage)
@@ -29367,7 +29366,8 @@
 /obj/machinery/computer/air_control{
 	frequency = 1441;
 	name = "Xenoflora Gas Monitor";
-	sensors = list("xenobot_sensor" = "Xenoflora Environment")
+	sensor_tag = "xenobot_sensor";
+	sensor_name = "Xenoflora Environment"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -30195,7 +30195,8 @@
 	input_tag = "test_in";
 	name = "Test Chamber Gas Monitor";
 	output_tag = "test_out";
-	sensors = list("testchamber_sensor" = "Test Chamber")
+	sensor_tag = "testchamber_sensor";
+	sensor_name = "Test Chamber"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -31059,7 +31060,6 @@
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "testchamber_sensor";
-	output = 63
 	},
 /obj/effect/landmark{
 	name = "bluespacerift"

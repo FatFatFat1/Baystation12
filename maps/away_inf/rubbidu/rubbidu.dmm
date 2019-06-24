@@ -457,7 +457,7 @@
 	},
 /obj/machinery/computer/air_control{
 	name = "Atmospheric Sensors";
-	sensors = list("calypso_out")
+	sensor_tag = "calypso_out"
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cockpit)

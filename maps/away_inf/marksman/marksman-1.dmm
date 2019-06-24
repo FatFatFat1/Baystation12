@@ -725,7 +725,8 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensor_tag = "o2_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/atmos)
@@ -768,7 +769,8 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensor_tag = "co2_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/atmos)
@@ -796,7 +798,8 @@
 	input_tag = "emp_in";
 	name = "Empty Chamber Supply Control";
 	output_tag = "emp_out";
-	sensors = list("emp_sensor" = "Tank")
+	sensor_tag = "emp_sensor";
+	sensor_name = "Tank"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor,

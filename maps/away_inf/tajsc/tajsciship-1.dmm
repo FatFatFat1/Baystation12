@@ -682,7 +682,7 @@
 "nf" = (/obj/structure/bed/chair/padded/light{icon_state = "chair_preview"; dir = 4},/turf/simulated/floor/carpet/red,/area/ship/tajsciship/dorms)
 "ng" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/obj/machinery/atmospherics/portables_connector{icon_state = "map_connector"; dir = 4},/obj/machinery/portable_atmospherics/powered/pump{start_pressure = 0},/obj/machinery/light/halogen{icon_state = "tube_map"; dir = 8},/turf/simulated/floor/tiled/old_cargo,/area/ship/tajsciship/solari)
 "nh" = (/obj/structure/lattice,/obj/effect/catwalk_plated/dark,/obj/machinery/light/halogen,/turf/space,/area/ship/tajsciship)
-"ni" = (/obj/machinery/computer/air_control{dir = 1; icon_state = "computer"; name = "Atmospheric Sensors"; sensors = list("tajshut_out")},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
+"ni" = (/obj/machinery/computer/air_control{dir = 1; icon_state = "computer"; name = "Atmospheric Sensors"; sensor_tag = "tajshut_out"},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)
 "nj" = (/obj/item/weapon/computer_hardware/scanner/atmos,/turf/simulated/floor/tiled/steel_grid,/area/ship/tajsciship/engines)
 "nk" = (/obj/effect/floor_decal/floordetail/tiled,/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 8},/obj/structure/drain,/obj/machinery/alarm/tajsciship{icon_state = "alarm0"; dir = 4},/turf/simulated/floor/tiled/kafel_full,/area/ship/tajsciship/kitchen)
 "nl" = (/obj/machinery/computer/ship/navigation{icon_state = "computer"; dir = 1},/turf/simulated/floor/tiled/monotile,/area/ship/tajscishuttle)

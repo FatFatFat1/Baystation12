@@ -1050,7 +1050,8 @@
 	input_tag = "air_in";
 	name = "Air Supply Control";
 	output_tag = "air_out";
-	sensors = list("air_sensor" = "Tank")
+	sensor_tag = "air_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor/plating,
 /area/ship/gunboat/engine/upper)
