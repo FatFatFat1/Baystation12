@@ -23,17 +23,17 @@
 
 /obj/machinery/power/smes/buildable/explor_shuttle/New()
 	..(0)
-	component_parts += new /obj/item/weapon/smes_coil/weak(src)
+	component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
 	recalc_coils()
 
 	component_parts = list()
 	component_parts += new /obj/item/stack/cable_coil(src,30)
-	component_parts += new /obj/item/weapon/circuitboard/smes(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/smes(src)
 	src.wires = new /datum/wires/smes(src)
 
 	// Allows for mapped-in SMESs with larger capacity/IO
 	if(cur_coils)
 		for(var/i = 1, i <= cur_coils, i++)
-			component_parts += new /obj/item/weapon/smes_coil/weak(src)
+			component_parts += new /obj/item/weapon/stock_parts/smes_coil/weak(src)
 		recalc_coils()
 	..()

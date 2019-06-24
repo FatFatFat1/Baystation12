@@ -555,7 +555,7 @@
 	icon_state = "bordercolor";
 	dir = 9
 	},
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 2;
 	name = "Atmospheric Sensors";
 	sensors = list("blueriver_out")

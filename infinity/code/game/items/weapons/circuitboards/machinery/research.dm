@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/telesci_pad
+/obj/item/weapon/stock_parts/circuitboard/telesci_pad
 	name = T_BOARD("telepad")
 	build_path = /obj/machinery/telepad
 	board_type = "machine"

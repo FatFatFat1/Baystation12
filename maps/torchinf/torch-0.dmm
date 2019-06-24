@@ -917,7 +917,7 @@
 	icon_state = "camera";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	dir = 8;
 	name = "Atmospheric Sensors";
 	sensors = list("calypso_out")
@@ -16767,7 +16767,7 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/phoron)
 "Wz" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 2;
 	input_tag = "phoron_in";
 	name = "Test Chamber Gas Monitor";
@@ -17520,7 +17520,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	input_tag = "toxins_in";
 	name = "Toxins Gas Monitor";

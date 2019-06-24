@@ -881,7 +881,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/rack,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = "fuel_in";
@@ -1488,7 +1488,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = null;

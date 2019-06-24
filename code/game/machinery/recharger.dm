@@ -18,7 +18,7 @@
 /obj/machinery/recharger/New()
 	..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/recharger(src)
+	component_parts += new /obj/item/weapon/stock_parts/circuitboard/recharger(src)
 	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
 	component_parts += new /obj/item/weapon/stock_parts/capacitor(src)
 	RefreshParts()

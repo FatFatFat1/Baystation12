@@ -1873,7 +1873,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/third,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/third,
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
 	icon_state = "intact";
 	dir = 4
@@ -1916,7 +1916,7 @@
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/third,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/third,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
 "adr" = (
@@ -2807,7 +2807,7 @@
 /obj/effect/floor_decal/corner/grey{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/third{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/third{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
@@ -4415,7 +4415,7 @@
 	dir = 1;
 	pixel_y = -29
 	},
-/obj/machinery/computer/general_air_control/engines_flame/third{
+/obj/machinery/computer/air_control/engines_flame/third{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
@@ -29364,7 +29364,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora_storage)
 "aPp" = (
-/obj/machinery/computer/general_air_control{
+/obj/machinery/computer/air_control{
 	frequency = 1441;
 	name = "Xenoflora Gas Monitor";
 	sensors = list("xenobot_sensor" = "Xenoflora Environment")
@@ -30191,7 +30191,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/bridge)
 "aQM" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	input_tag = "test_in";
 	name = "Test Chamber Gas Monitor";
 	output_tag = "test_out";
@@ -31302,7 +31302,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
-/obj/machinery/computer/general_air_control/engines_flame/fourth,
+/obj/machinery/computer/air_control/engines_flame/fourth,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aSF" = (
@@ -32382,7 +32382,7 @@
 	icon_state = "intact";
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/co2/fourth,
+/obj/machinery/computer/air_control/large_tank_control/nacelle/co2/fourth,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aUr" = (
@@ -33150,7 +33150,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 10
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/oxygen/fourth{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/oxygen/fourth{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
@@ -33203,7 +33203,7 @@
 	icon_state = "intact";
 	dir = 6
 	},
-/obj/machinery/computer/general_air_control/large_tank_control/nacelle/phoron/fourth{
+/obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/fourth{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,

@@ -210,7 +210,7 @@
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "tele-wires")
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/teleporter_hub(src),
+		new /obj/item/weapon/stock_parts/circuitboard/teleporter_hub(src),
 		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
 		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
 		new /obj/item/weapon/stock_parts/micro_laser/ultra(src),
@@ -274,7 +274,7 @@
 	overlays.Cut()
 	overlays += image('icons/obj/stationobjs.dmi', icon_state = "controller-wires")
 	component_parts = list(
-		new /obj/item/weapon/circuitboard/teleporter_station(src),
+		new /obj/item/weapon/stock_parts/circuitboard/teleporter_station(src),
 		new /obj/item/weapon/stock_parts/manipulator/pico(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),
 		new /obj/item/weapon/stock_parts/scanning_module/phasic(src),

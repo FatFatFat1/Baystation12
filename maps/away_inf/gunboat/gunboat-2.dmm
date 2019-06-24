@@ -1044,7 +1044,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	dir = 8;
 	frequency = 1700;
 	input_tag = "air_in";

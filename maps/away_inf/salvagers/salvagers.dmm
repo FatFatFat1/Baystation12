@@ -13,7 +13,7 @@
 "am" = (/obj/structure/grille,/turf/space,/area/salvage/captain)
 "an" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{display_name = "Docking controller"; frequency = 1380; id_tag = "salvage_airlock"; pixel_x = 0; pixel_y = 24; req_access = list(3074); tag_airpump = "salvage_pump"; tag_chamber_sensor = "salvage_sensor"; tag_exterior_door = "salvage_ext"; tag_interior_door = "salvage_int"},/obj/item/modular_computer/console/preset/civilian/professional,/turf/simulated/floor/tiled,/area/salvage/bridge)
 "ao" = (/obj/item/modular_computer/console/preset/civilian/professional,/turf/simulated/floor/tiled,/area/salvage/bridge)
-"ap" = (/obj/machinery/computer/general_air_control{dir = 2; name = "Atmospheric Sensors"; req_access = list(3074); sensors = list("salvage_out")},/turf/simulated/floor/tiled,/area/salvage/bridge)
+"ap" = (/obj/machinery/computer/air_control{dir = 2; name = "Atmospheric Sensors"; req_access = list(3074); sensors = list("salvage_out")},/turf/simulated/floor/tiled,/area/salvage/bridge)
 "aq" = (/obj/structure/closet,/obj/item/device/radio/off,/obj/item/weapon/card/id/sierra/merchant/salvage{access = list(3074)},/obj/item/device/flashlight,/obj/item/device/eftpos,/obj/item/weapon/card/id/sierra/merchant/salvage{access = list(3074)},/turf/simulated/floor/wood/walnut,/area/salvage/captain)
 "ar" = (/obj/structure/table/reinforced,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/effect/floor_decal/spline/fancy/wood/corner,/turf/simulated/floor/wood/walnut,/area/salvage/captain)
 "as" = (/obj/structure/table/reinforced,/obj/effect/floor_decal/spline/fancy/wood,/obj/item/device/flashlight/lamp/green{pixel_x = -5; pixel_y = 4},/turf/simulated/floor/wood/walnut,/area/salvage/captain)

@@ -218,17 +218,17 @@
 /area/map_template/colony/surgery)
 "aH" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/fusion/core_control,
-/obj/item/weapon/circuitboard/fusion_core,
-/obj/item/weapon/circuitboard/fusion_fuel_compressor,
-/obj/item/weapon/circuitboard/fusion_fuel_control,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/fusion_injector,
-/obj/item/weapon/circuitboard/gyrotron_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion/core_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_core,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_compressor,
+/obj/item/weapon/stock_parts/circuitboard/fusion_fuel_control,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/fusion_injector,
+/obj/item/weapon/stock_parts/circuitboard/gyrotron_control,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
 /obj/item/weapon/stock_parts/manipulator/pico,
@@ -1792,15 +1792,15 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/rdserver,
-/obj/item/weapon/circuitboard/rdservercontrol,
-/obj/item/weapon/circuitboard/recharger,
-/obj/item/weapon/circuitboard/recharger,
-/obj/item/weapon/circuitboard/telecomms/relay,
-/obj/item/weapon/circuitboard/circuit_imprinter,
-/obj/item/weapon/circuitboard/destructive_analyzer,
-/obj/item/weapon/circuitboard/protolathe,
-/obj/item/weapon/circuitboard/rdconsole,
+/obj/item/weapon/stock_parts/circuitboard/rdserver,
+/obj/item/weapon/stock_parts/circuitboard/rdservercontrol,
+/obj/item/weapon/stock_parts/circuitboard/recharger,
+/obj/item/weapon/stock_parts/circuitboard/recharger,
+/obj/item/weapon/stock_parts/circuitboard/telecomms/relay,
+/obj/item/weapon/stock_parts/circuitboard/circuit_imprinter,
+/obj/item/weapon/stock_parts/circuitboard/destructive_analyzer,
+/obj/item/weapon/stock_parts/circuitboard/protolathe,
+/obj/item/weapon/stock_parts/circuitboard/rdconsole,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/engineering)
 "dH" = (
@@ -1921,7 +1921,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7664;
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
@@ -2394,13 +2394,13 @@
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module,
 /obj/item/weapon/stock_parts/scanning_module/adv,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/weak,
-/obj/item/weapon/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_capacity,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/super_io,
+/obj/item/weapon/stock_parts/smes_coil/weak,
+/obj/item/weapon/stock_parts/smes_coil/weak,
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2739,7 +2739,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7663;
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
@@ -2827,7 +2827,7 @@
 	icon_state = "techfloor_edges";
 	dir = 1
 	},
-/obj/machinery/computer/general_air_control/large_tank_control{
+/obj/machinery/computer/air_control/large_tank_control{
 	frequency = 7662;
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
