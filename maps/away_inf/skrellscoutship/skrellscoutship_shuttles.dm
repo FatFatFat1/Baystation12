@@ -92,7 +92,7 @@
 	req_access = list(access_medical)
 
 /obj/machinery/power/smes/buildable/preset/torch/engine_main
-	uncreated_component_parts = (/obj/item/weapon/stock_parts/smes_coil/super_io = 2, /obj/item/weapon/stock_parts/smes_coil/super_capacity = 2)
+	uncreated_component_parts = list(/obj/item/weapon/stock_parts/smes_coil/super_io = 2, /obj/item/weapon/stock_parts/smes_coil/super_capacity = 2)
 	_input_maxed = TRUE
 	_output_maxed = TRUE
 	_input_on = TRUE
