@@ -38,8 +38,6 @@
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
 
-	stealth_step = TRUE
-
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/feet.dmi'
 	)
