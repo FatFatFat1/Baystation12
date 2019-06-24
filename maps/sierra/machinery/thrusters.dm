@@ -67,7 +67,7 @@
 /obj/machinery/computer/air_control/engines_tanks
 	name = "Nacelles Tank Monitoring"
 	frequency = 1441
-	sensors = list("ReacEngPlasma1" = "Third Deck Starboard H2",
+	/*sensors = list("ReacEngPlasma1" = "Third Deck Starboard H2",
 				"ReacEngPlasma2" = "Third Deck Port H2",
 				"ReacEngPlasma3" = "First Deck Starboard H2",
 				"ReacEngPlasma4" = "First Deck Port H2",
@@ -78,16 +78,16 @@
 				"ReacEngCO21" = "Third Deck Starboard CO2",
 				"ReacEngCO22" = "Third Deck Port CO2",
 				"ReacEngCO23" = "First Deck Starboard CO2",
-				"ReacEngCO24" = "First Deck Port CO2")
+				"ReacEngCO24" = "First Deck Port CO2")*/
 
 /obj/machinery/computer/air_control/engines_flame
 	name = "Nacelles Chamber Monitoring"
 	frequency = 1441
-	sensors = list("ReacEng1" = "Third Deck Starboard Chamber",
+	/*sensors = list("ReacEng1" = "Third Deck Starboard Chamber",
  				"ReacEng2" = "Third Deck Port Chamber",
 				"ReacEng3" = "First Deck Starboard Chamber",
 				"ReacEng4" = "First Deck Port Chamber")
-
+*/
 /obj/machinery/computer/air_control/engines_flame/first
 	sensor_tag = "ReacEng1"
 	sensor_name = "Chamber"
@@ -160,7 +160,7 @@
 /obj/machinery/computer/air_control/large_tank_control/nacelle/phoron/fourth
 	input_tag = "fuel4p_in"
 	output_tag = "fuel4p_out"
-	sensors = list("ReacEngPlasma4" = "Tank")
+	sensor_tag = "ReacEngPlasma4"
 	sensor_name = "Tank"
 
 /obj/machinery/computer/air_control/large_tank_control/nacelle/co2/first

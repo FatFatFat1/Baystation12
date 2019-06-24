@@ -20154,10 +20154,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shield/seconddeck)
 "aGf" = (
-/obj/machinery/computer/air_control/engines_tanks{
-	icon_state = "computer";
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/button/ignition{
 	dir = 1;
@@ -20600,10 +20596,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/seconddeck)
 "aGP" = (
-/obj/machinery/computer/air_control/engines_flame{
-	icon_state = "computer";
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/status_light{
 	id_tag = "ReacEng1";
