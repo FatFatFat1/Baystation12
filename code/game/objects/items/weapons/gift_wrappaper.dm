@@ -60,7 +60,7 @@
 		/obj/item/weapon/grenade/smokebomb,
 		/obj/item/weapon/grenade/fake,
 		/obj/item/weapon/stamp/clown,
-		/obj/item/clothing/shoes/slippers_worn,
+		/obj/item/clothing/shoes/slippers/worn,
 		/obj/item/weapon/contraband/poster,
 		/obj/item/weapon/bikehorn,
 		/obj/item/weapon/beach_ball,
