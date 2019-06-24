@@ -1862,7 +1862,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "er" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/atmos/aux)
@@ -15192,7 +15192,7 @@
 /area/space)
 "IU" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -15886,7 +15886,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /turf/simulated/floor/reinforced,
 /area/thruster/d3port)
 "Kn" = (

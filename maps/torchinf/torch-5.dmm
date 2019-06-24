@@ -7965,7 +7965,7 @@
 /turf/simulated/floor/tiled,
 /area/aquila/storage)
 "rx" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -8863,7 +8863,7 @@
 /area/aquila/secure_storage)
 "sX" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,

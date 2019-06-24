@@ -3716,7 +3716,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)
 "gG" = (
-/obj/machinery/atmospherics/pipe/tank/air,
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)

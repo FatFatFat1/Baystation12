@@ -1700,7 +1700,7 @@
 /area/space)
 "adC" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/pipe/tank/oxygen{
+/obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -11178,7 +11178,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aLT" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -11474,7 +11474,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
 "aNa" = (
-/obj/machinery/atmospherics/pipe/tank/air{
+/obj/machinery/atmospherics/unary/tank/air{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -13399,13 +13399,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "aTi" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aTj" = (

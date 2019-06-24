@@ -257,7 +257,7 @@
 "fZ" = (/mob/living/simple_animal/aquatic/fish,/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/underwater)
 "ga" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/visible/supply,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "gh" = (/obj/machinery/door/airlock/silver{name = "Strange Airlock"},/turf/simulated/floor/plating{icon = 'icons/turf/snow.dmi';icon_state = "snowplating"},/area/adherent_base/underwater)
-"gn" = (/obj/machinery/atmospherics/pipe/tank/air,/turf/simulated/floor/crystal,/area/adherent_base/base)
+"gn" = (/obj/machinery/atmospherics/unary/tank/air,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "go" = (/obj/machinery/navbeacon/Engineering,/turf/simulated/floor/crystal,/area/adherent_base/base)
 "gv" = (/mob/living/simple_animal/aquatic/fish/grump,/mob/living/simple_animal/aquatic/fish/judge,/turf/simulated/floor/asteroid/sea,/area/adherent_base/underwater)
 "gw" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/visible/supply{icon_state = "intact-supply";dir = 5},/turf/simulated/floor/crystal,/area/adherent_base/base)
