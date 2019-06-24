@@ -24,7 +24,7 @@
 			if(!A.wiresexposed)
 				return
 
-			if(!A.terminal)
+			if(!A.terminal())
 				to_chat(user, SPAN_WARNING("This power station isn't connected to global power channel."))
 				return
 
