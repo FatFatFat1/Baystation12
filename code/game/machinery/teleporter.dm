@@ -234,12 +234,7 @@
 /obj/machinery/teleport/hub/attackby(var/obj/item/weapon/W, var/mob/user)
 	if(station && station.engaged)
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
+	if(component_attackby(W, user)) return TRUE
 
 /obj/machinery/teleport/hub/Bumped(M as mob|obj)
 	spawn()
@@ -299,12 +294,7 @@
 /obj/machinery/teleport/station/attackby(var/obj/item/weapon/W, var/mob/user)
 	if(engaged)
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
+	if(component_attackby(W, user)) return TRUE
 
 /obj/machinery/teleport/station/attack_ai(var/mob/user)
 	attack_hand(user)

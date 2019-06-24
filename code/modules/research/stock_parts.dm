@@ -39,9 +39,7 @@
 	else
 		if(works_from_distance)
 			if(istype(T))
-				if(T.component_parts)
-					T.default_part_replacement(user, src)
-					user.Beam(T,icon_state="rped_upgrade",icon='icons/obj/bluespace_rped.dmi',time=5)
+				if(T.component_attackby(src, user)) return TRUE
 	return
 
 /obj/item/weapon/stock_parts

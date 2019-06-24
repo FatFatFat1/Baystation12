@@ -90,17 +90,7 @@
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
-	if(default_deconstruction_screwdriver(user, I))
-		return
-
-	if(default_part_replacement(user, I))
-		return
-
-	if(default_deconstruction_crowbar(user, I))
-		return
-
-	else
-		default_deconstruction_crowbar(user,I)
+	else if(component_attackby(I, user)) return TRUE
 
 /obj/machinery/pile_ripper/emag_act(mob/user)
 	if(!emagged)

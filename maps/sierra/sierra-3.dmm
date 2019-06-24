@@ -5315,7 +5315,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Drone Station";
-	sortType = "Drone Station"
+	sort_type = "Drone Station"
 	},
 /turf/simulated/floor/plating,
 /turf/simulated/open,
@@ -11206,7 +11206,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Bridge";
-	sortType = "Bridge"
+	sort_type = "Bridge"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge)
@@ -14613,7 +14613,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Internal Affairs Agent";
-	sortType = "Internal Affairs Agent"
+	sort_type = "Internal Affairs Agent"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
@@ -15303,7 +15303,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Forensic Office";
-	sortType = "Forensic Office"
+	sort_type = "Forensic Office"
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/hallway/aft)
@@ -16654,7 +16654,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Head Of Security";
-	sortType = "Head Of Security"
+	sort_type = "Head Of Security"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -17158,7 +17158,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Security Equipment";
-	sortType = "Security Equipment"
+	sort_type = "Security Equipment"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	icon_state = "steel_decals4";
@@ -17399,7 +17399,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Equipment";
-	sortType = "Research Equipment"
+	sort_type = "Research Equipment"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -17532,7 +17532,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chapel";
-	sortType = "Chapel"
+	sort_type = "Chapel"
 	},
 /obj/effect/landmark{
 	name = "lightsout"
@@ -18955,7 +18955,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Medical Officer";
-	sortType = "Chief Medical Officer"
+	sort_type = "Chief Medical Officer"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -19032,7 +19032,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Development";
-	sortType = "Research and Development"
+	sort_type = "Research and Development"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19227,7 +19227,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Robotics Laboratory";
-	sortType = "Robotics Laboratory"
+	sort_type = "Robotics Laboratory"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -19582,7 +19582,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 2;
 	name = "Warden";
-	sortType = "Warden"
+	sort_type = "Warden"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/port)
@@ -21765,7 +21765,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Captain";
-	sortType = "Captain"
+	sort_type = "Captain"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
@@ -22063,7 +22063,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 2;
 	name = "Head of Personnel";
-	sortType = "Head of Personnel"
+	sort_type = "Head of Personnel"
 	},
 /turf/simulated/floor/tiled,
 /area/bridge/lobby)
@@ -30886,7 +30886,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Conference Room";
-	sortType = "Conference Room"
+	sort_type = "Conference Room"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -36533,7 +36533,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chemistry";
-	sortType = "Chemistry"
+	sort_type = "Chemistry"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
@@ -36553,7 +36553,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Research Director";
-	sortType = "Research Director"
+	sort_type = "Research Director"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -36570,7 +36570,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Xenobotany";
-	sortType = "Xenobotany"
+	sort_type = "Xenobotany"
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -36725,7 +36725,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Medical Equipment";
-	sortType = "Medical Equipment"
+	sort_type = "Medical Equipment"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)

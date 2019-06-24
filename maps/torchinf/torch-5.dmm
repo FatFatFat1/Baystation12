@@ -1278,7 +1278,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "XO's Office";
-	sortType = "XO's Office"
+	sort_type = "XO's Office"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -1794,7 +1794,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Commanding Officer";
-	sortType = "Commanding Officer"
+	sort_type = "Commanding Officer"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -2458,7 +2458,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Bridge";
-	sortType = "Bridge"
+	sort_type = "Bridge"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -2877,7 +2877,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 8;
 	name = "Chief Engineer";
-	sortType = "Chief Engineer"
+	sort_type = "Chief Engineer"
 	},
 /obj/effect/floor_decal/corner/yellow{
 	icon_state = "corner_white";
@@ -7448,7 +7448,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Chief Medical Officer";
-	sortType = "Chief Medical Officer"
+	sort_type = "Chief Medical Officer"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -7868,7 +7868,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 1;
 	name = "Research Director";
-	sortType = "Research Director"
+	sort_type = "Research Director"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -8294,7 +8294,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Bridge Conference Room";
-	sortType = "Bridge Conference Room"
+	sort_type = "Bridge Conference Room"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/monotile,
@@ -8332,7 +8332,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Chief Of Security";
-	sortType = "Chief Of Security"
+	sort_type = "Chief Of Security"
 	},
 /obj/effect/floor_decal/corner/b_green,
 /turf/simulated/floor/tiled,
@@ -8353,7 +8353,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "Corporate Liaison";
-	sortType = "Corporate Liaison"
+	sort_type = "Corporate Liaison"
 	},
 /obj/effect/floor_decal/corner/b_green{
 	tag = "icon-corner_white (SOUTHWEST)";
@@ -8419,7 +8419,7 @@
 /obj/structure/disposalpipe/sortjunction{
 	dir = 4;
 	name = "SolGov Representative";
-	sortType = "SolGov Representative"
+	sort_type = "SolGov Representative"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -8650,7 +8650,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Bridge Storage";
-	sortType = "Bridge Storage"
+	sort_type = "Bridge Storage"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -9440,7 +9440,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
 	name = "Senior Enlisted Advisor";
-	sortType = "Senior Enlisted Advisor"
+	sort_type = "Senior Enlisted Advisor"
 	},
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -11905,7 +11905,7 @@
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 4;
 	name = "Security Checkpoint - Bridge Deck";
-	sortType = "Security Checkpoint - Bridge Deck"
+	sort_type = "Security Checkpoint - Bridge Deck"
 	},
 /obj/effect/floor_decal/corner/blue{
 	icon_state = "corner_white";

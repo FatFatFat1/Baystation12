@@ -70,12 +70,7 @@
 			to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
 			playsound(loc, 'sound/items/Ratchet.ogg', 75, 1)
 			return
-		if(default_deconstruction_screwdriver(user, G))
-			return
-		if(default_deconstruction_crowbar(user, G))
-			return
-		if(default_part_replacement(user, G))
-			return
+		if(component_attackby(G, user)) return TRUE
 
 /obj/machinery/recharger/attack_hand(mob/user as mob)
 	if(istype(user,/mob/living/silicon))
