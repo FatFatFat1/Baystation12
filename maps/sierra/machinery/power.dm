@@ -6,8 +6,6 @@
 
 /obj/machinery/power/apc/bsa
 	cell_type = /obj/item/weapon/cell/high
-	chargelevel = 0.1 //1% per second (10w)
-
 //
 // SMES units
 //
