@@ -91,10 +91,10 @@ var/global/list/rad_collectors = list()
 	if(istype(W, /obj/item/weapon/tank/phoron))
 		if(!anchored)
 			to_chat(user, "<span class='warning'>The [src] needs to be secured to the floor first.</span>")
-			return
+			return 1
 		if(P)
 			to_chat(user, "<span class='warning'>There's already a phoron tank loaded.</span>")
-			return
+			return 1
 		if(panel_open)
 			to_chat(user, "<span class='notice'>Close the panel first.</span>")
 			return
@@ -102,11 +102,12 @@ var/global/list/rad_collectors = list()
 			return
 		P = W
 		update_icon()
-		return
-	if(isCrowbar(W) && P && !locked)
-		eject()
-		return
-	if(isWrench(W))
+		return 1
+	else if(isCrowbar(W))
+		if(P && !locked)
+			eject()
+			return 1
+	else if(isWrench(W))
 		if(P)
 			to_chat(user, "<span class='notice'>Remove the phoron tank first.</span>")
 			return
@@ -119,9 +120,9 @@ var/global/list/rad_collectors = list()
 		for(var/obj/machinery/power/rad_collector/R in get_turf(src))
 			if(R != src)
 				to_chat(user, "<span class='warning'>You cannot install more than one collector on the same spot.</span>")
-				return
+				return 1
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-		anchored = !src.anchored
+		src.anchored = !src.anchored
 		user.visible_message("[user.name] [anchored? "secures":"unsecures"] the [src.name].", \
 			"You [anchored? "secure":"undo"] the external bolts.", \
 			"You hear a ratchet")
@@ -140,20 +141,14 @@ var/global/list/rad_collectors = list()
 				to_chat(user, "<span class='warning'>The controls can only be locked when the [src] is active</span>")
 		else
 			to_chat(user, "<span class='warning'>Access denied!</span>")
-		return
+		return 1
 	if(active)
 		to_chat(user, "<span class='notice'>Turn \the [src] first.</span>")
 		return
 	if(anchored)
 		to_chat(user, "<span class='warning'>The [src] needs to be unsecured from the floor first.</span>")
 		return
-	if(default_deconstruction_screwdriver(user, W))
-		return
-	if(default_deconstruction_crowbar(user, W))
-		return
-	if(default_part_replacement(user, W))
-		return
-	return
+	return ..()
 
 /obj/machinery/power/rad_collector/examine(mob/user)
 	if (..(user, 3) && !(stat & BROKEN))
