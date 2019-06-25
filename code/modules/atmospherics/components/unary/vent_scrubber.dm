@@ -29,15 +29,14 @@
 
 	var/welded = 0
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SCRUBBER
-	pipe_type = PIPE_SCRUBBER
 	build_icon_state = "scrubber"
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on
 	use_power = POWER_USE_IDLE
 	icon_state = "map_scrubber_on"
 
-/obj/machinery/atmospherics/unary/vent_scrubber/New()
-	..()
+/obj/machinery/atmospherics/unary/vent_scrubber/Initialize()
+	. = ..()
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_FILTER
 	icon = null
 

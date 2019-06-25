@@ -396,7 +396,6 @@
 	icon_state = "intake"
 
 	var/c_mode = 0
-	ptype = DISPOSAL_INLET
 
 /obj/machinery/disposal/deliveryChute/New()
 	..()
@@ -491,11 +490,8 @@
 				playsound(src.loc, 'sound/items/Welder2.ogg', 100, 1)
 				if(!src || !W.isOn()) return
 				to_chat(user, "You sliced the floorweld off the delivery chute.")
-				var/obj/structure/disposalconstruct/C = new (src.loc)
-				C.ptype = 8 // 8 =  Delivery chute
+				var/obj/structure/disposalconstruct/C = new (loc, src)
 				C.update()
-				C.anchored = 1
-				C.set_density(1)
 				qdel(src)
 			return
 		else

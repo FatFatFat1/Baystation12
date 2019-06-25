@@ -50,7 +50,7 @@
 /turf/simulated/wall/prepainted,
 /area/maintenance/bridge/forestarboard)
 "am" = (
-/obj/random/closet,
+/obj/random/torchcloset,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/bridge/forestarboard)
@@ -527,7 +527,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/aux_eva)
 "bm" = (
-/obj/random/closet,
+/obj/random/torchcloset,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/bridge/aftstarboard)
@@ -2188,7 +2188,12 @@
 "gb" = (
 /obj/structure/flora/pottedplant/large,
 /obj/item/device/radio/intercom{
-	pixel_y = 23
+	dir = 4;
+	pixel_x = -21
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 0;
+	pixel_y = 20
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/cl)
@@ -3481,7 +3486,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/hallway/primary/bridge/aft)
 "jc" = (
-/obj/structure/drain,
+/obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/cobed)
 "je" = (
@@ -10047,7 +10052,7 @@
 /area/maintenance/bridge/aftport)
 "xo" = (
 /obj/random/maintenance/solgov,
-/obj/random/closet,
+/obj/random/torchcloset,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -10519,7 +10524,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/co)
 "yV" = (
-/obj/random/closet,
+/obj/random/torchcloset,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/random/maintenance/solgov/clean,
 /obj/random/maintenance/solgov/clean,
@@ -12437,7 +12442,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hallway/port)
 "Gi" = (
-/obj/random/closet,
+/obj/random/torchcloset,
 /obj/random/maintenance/solgov,
 /obj/random/maintenance/solgov/clean,
 /turf/simulated/floor/tiled/techfloor,

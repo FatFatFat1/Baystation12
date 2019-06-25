@@ -20,8 +20,8 @@
 			highest_rank = check_rank
 
 	UNSETEMPTY(latencies)
-
-	if(force || last_rating != ceil(combined_rank/ranks.len))
+	var/rank_count = max(1, LAZYLEN(ranks))
+	if(force || last_rating != ceil(combined_rank/rank_count))
 		if(highest_rank <= 1)
 			if(highest_rank == 0)
 				qdel(src)
@@ -29,7 +29,7 @@
 		else
 			rebuild_power_cache = TRUE
 			sound_to(owner, 'sound/effects/psi/power_unlock.ogg')
-			rating = ceil(combined_rank/ranks.len)
+			rating = ceil(combined_rank/rank_count)
 			cost_modifier = 1
 			if(rating > 1) cost_modifier -= min(1, max(0.1, (rating-1) / 10))
 			if(!ui)
@@ -58,6 +58,8 @@
 					aura_color = "#33cc33"
 				else if(highest_faculty == PSI_ENERGISTICS)
 					aura_color = "#cccc33"
+			aura_image.pixel_x = -64 - owner.default_pixel_x
+			aura_image.pixel_y = -64 - owner.default_pixel_y
 
 	if(!announced && owner && owner.client && !QDELETED(src))
 		announced = TRUE

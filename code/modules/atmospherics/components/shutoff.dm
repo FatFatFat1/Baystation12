@@ -7,7 +7,6 @@
 	var/close_on_leaks = TRUE	// If false it will be always open
 	level = 1
 	connect_types = CONNECT_TYPE_SCRUBBER | CONNECT_TYPE_SUPPLY | CONNECT_TYPE_REGULAR | CONNECT_TYPE_FUEL
-	pipe_type = PIPE_SVALVE
 	build_icon_state = "svalve"
 
 /obj/machinery/atmospherics/valve/shutoff/on_update_icon()
@@ -17,10 +16,10 @@
 	..()
 	to_chat(user, "The automatic shutoff circuit is [close_on_leaks ? "enabled" : "disabled"].")
 
-/obj/machinery/atmospherics/valve/shutoff/New()
+/obj/machinery/atmospherics/valve/shutoff/Initialize()
+	. = ..()
 	open()
 	hide(1)
-	..()
 
 /obj/machinery/atmospherics/valve/shutoff/attack_hand(var/mob/user as mob)
 	close_on_leaks = !close_on_leaks

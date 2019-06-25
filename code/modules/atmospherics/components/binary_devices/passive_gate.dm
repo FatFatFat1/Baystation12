@@ -25,16 +25,15 @@
 	var/id = null
 	var/datum/radio_frequency/radio_connection
 
-	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER|CONNECT_TYPE_FUEL
-	pipe_type = PIPE_PASSIVE_GATE
+	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_FUEL
 	build_icon_state = "passivegate"
 
 /obj/machinery/atmospherics/binary/passive_gate/on
 	unlocked = 1
 	icon_state = "on"
 
-/obj/machinery/atmospherics/binary/passive_gate/New()
-	..()
+/obj/machinery/atmospherics/binary/passive_gate/Initialize()
+	. = ..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP * 2.5
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP * 2.5
 

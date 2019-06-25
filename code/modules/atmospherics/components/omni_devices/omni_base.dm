@@ -22,12 +22,13 @@
 
 	var/list/ports = new()
 
-	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER|CONNECT_TYPE_FUEL
+	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_FUEL
 
 	pipe_class = PIPE_CLASS_OMNI
+	connect_dir_type = SOUTH | NORTH | EAST | WEST
 
-/obj/machinery/atmospherics/omni/New()
-	..()
+/obj/machinery/atmospherics/omni/Initialize()
+	. = ..()
 	icon_state = "base"
 
 	ports = new()
