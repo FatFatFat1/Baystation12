@@ -36,34 +36,35 @@
 
 /obj/item/weapon/rpd/proc/build_quantity(var/datum/pipe/P, var/quantity)
 	for(var/I = quantity;I > 0;I -= 1)
-		P.Build(P, loc, pipe_color)
+		P.Build(P, usr.loc, pipe_color)
 
 /obj/item/weapon/rpd/Topic(href, href_list, state = GLOB.physical_state)
 	if((. = ..()))
 		return
 
 	if(href_list["build"])
-		var/datum/pipe/P = locate(href_list["build"])
-		P.Build(P, loc, pipe_color)
-		//[inf]
-		wait = 1
-		spawn(10)
-			wait = 0
-		//[/inf]
+		if(!wait)
+			var/datum/pipe/P = locate(href_list["build"])
+			P.Build(P, usr.loc, pipe_color)
+			wait = 1
+			spawn(10)
+				wait = 0
 
 	if(href_list["buildfive"])
-		var/datum/pipe/P = locate(href_list["buildfive"])
-		build_quantity(P, 5)
-		wait = 1
-		spawn(15)
-			wait = 0
+		if(!wait)
+			var/datum/pipe/P = locate(href_list["buildfive"])
+			build_quantity(P, 5)
+			wait = 1
+			spawn(15)
+				wait = 0
 
 	if(href_list["buildten"])
-		var/datum/pipe/P = locate(href_list["buildten"])
-		build_quantity(P, 10)
-		wait = 1
-		spawn(20)
-			wait = 0
+		if(!wait)
+			var/datum/pipe/P = locate(href_list["buildten"])
+			build_quantity(P, 10)
+			wait = 1
+			spawn(20)
+				wait = 0
 
 	if(href_list["color"])
 		var/choice = input(usr, "What color do you want pipes to have?") as null|anything in pipe_colors
