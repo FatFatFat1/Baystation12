@@ -1926,7 +1926,8 @@
 	input_tag = "cn2n";
 	name = "Nitrogen Supply Control";
 	output_tag = "cn2o";
-	sensors = list("c1" = "Tank")
+	sensor_tag "c1";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -2744,7 +2745,8 @@
 	input_tag = "co2n";
 	name = "Oxygen Supply Control";
 	output_tag = "co2o";
-	sensors = list("c2" = "Tank")
+	sensor_tag = "c2";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
@@ -2832,7 +2834,8 @@
 	input_tag = "cco2n";
 	name = "Carbon Dioxide Tank Control";
 	output_tag = "cco2o";
-	sensors = list("c3" = "Tank")
+	sensor_tag = "c3";
+	sensor_name = "Tank"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,

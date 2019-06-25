@@ -103,7 +103,7 @@
 /obj/item/weapon/storage/belt/utility/crystal
 	name = "crystalline tool harness"
 	desc = "A segmented belt of strange crystalline material."
-	icon_state = "utilitybelt_crystal"
+	icon_state = "vigil"
 	item_state = "utilitybelt_crystal"
 
 /obj/item/weapon/storage/belt/utility/crystal/Initialize()

@@ -827,7 +827,8 @@
 	input_tag = "h2_in";
 	name = "Hydrogen Supply Control";
 	output_tag = "h2_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensor_tag = "tox_sensor";
+	sensor_name = "Tank"
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
 	icon_state = "map";
@@ -1335,7 +1336,8 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensor_tag = "n2_sensor";
+	sensor_name = "Tank"
 	},
 /turf/simulated/floor,
 /area/ship/marksman/maintenance/atmos)
