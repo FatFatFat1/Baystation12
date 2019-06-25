@@ -3692,7 +3692,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/drain,
+/datum/pipe/pipe_dispenser/device/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "gE" = (
@@ -4487,7 +4487,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/drain,
+/datum/pipe/pipe_dispenser/device/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "hX" = (
@@ -5168,7 +5168,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/drain,
+/datum/pipe/pipe_dispenser/device/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/jail)
 "iY" = (
@@ -6557,7 +6557,7 @@
 /turf/simulated/floor/grass,
 /area/map_template/colony/hydroponics)
 "lp" = (
-/obj/structure/drain,
+/datum/pipe/pipe_dispenser/device/drain,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony)
 "lq" = (

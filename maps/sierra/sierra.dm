@@ -69,6 +69,8 @@
 	#include "job/jobs_security.dm"
 	#include "job/jobs_service.dm"
 
+	#include "job/paperwork/stamps.dm"
+
 	#include "machinery/alarm.dm"
 	#include "machinery/doors.dm"
 	#include "machinery/keycard authentication.dm"
