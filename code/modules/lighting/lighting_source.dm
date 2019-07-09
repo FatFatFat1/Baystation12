@@ -13,6 +13,8 @@
 	var/light_falloff_curve   // adjusts curve for falloff gradient
 	var/light_color    // The colour of the light, string, decomposed by parse_light_color()
 
+	var/turf/pixel_turf // eckff@inf-dev: The turf the top_atom appears to over. FOR TEST ONLY
+
 	// Variables for keeping track of the colour.
 	var/lum_r
 	var/lum_g
@@ -48,6 +50,9 @@
 		top_atom.light_sources += src
 
 	source_turf = top_atom
+
+	pixel_turf = (top_atom.pixel_x || top_atom.pixel_y) ? get_turf_pixel(top_atom) : source_turf // eckff@inf-dev: pixel shifting, FOR TEST ONLY
+
 	light_max_bright = source_atom.light_max_bright
 	light_inner_range = source_atom.light_inner_range
 	light_outer_range = source_atom.light_outer_range
@@ -138,10 +143,21 @@
 	if(isturf(top_atom))
 		if(source_turf != top_atom)
 			source_turf = top_atom
+
+			pixel_turf = source_turf // eckff@inf-dev: FOR TEST ONLY
+
 			. = 1
 	else if(top_atom.loc != source_turf)
 		source_turf = top_atom.loc
+
+		pixel_turf = get_turf_pixel(top_atom) // eckff@inf-dev: FOR TEST ONLY
+
 		. = 1
+	else // eckff@inf-dev: FOR TEST ONLY
+		var/P = get_turf_pixel(top_atom)
+		if (P != pixel_turf)
+			. = 1
+			pixel_turf = get_turf_pixel(top_atom)
 
 	if(source_atom.light_max_bright != light_max_bright)
 		light_max_bright = source_atom.light_max_bright
@@ -185,7 +201,7 @@
 // The braces and semicolons are there to be able to do this on a single line.
 
 #define APPLY_CORNER(C)              \
-	. = LUM_FALLOFF(C, source_turf); \
+	. = LUM_FALLOFF(C, pixel_turf);  \
 	. *= (light_max_bright ** 2);    \
 	. *= light_max_bright < 0 ? -1:1;\
 	effect_str[C] = .;               \
