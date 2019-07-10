@@ -188,8 +188,6 @@
 
 	name = replacetextEx(name, "\improper", "")
 
-	. = ..(mapload)
-
 	if(operating)
 		src.update()
 	power_change()

@@ -152,6 +152,8 @@
 	update_icon()
 
 /obj/machinery/alarm/Process()
+	..()
+
 	if((stat & (NOPOWER|BROKEN)) || shorted || buildstage != 2)
 		return
 
@@ -1033,6 +1035,8 @@ FIRE ALARM
 	return
 
 /obj/machinery/firealarm/Process()//Note: this processing was mostly phased out due to other code, and only runs when needed
+	..()
+
 	if(stat & (NOPOWER|BROKEN))
 		return
 
@@ -1043,7 +1047,7 @@ FIRE ALARM
 			src.alarm()
 			src.time = 0
 			src.timing = 0
-			STOP_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
+			STOP_PROCESSING(SSmachines, src)
 		src.updateDialog()
 	last_process = world.timeofday
 
@@ -1111,7 +1115,7 @@ FIRE ALARM
 	else if (href_list["time"])
 		src.timing = text2num(href_list["time"])
 		last_process = world.timeofday
-		START_PROCESSING_MACHINE(src, MACHINERY_PROCESS_SELF)
+		START_PROCESSING(SSmachines, src)
 		. = TOPIC_REFRESH
 	else if (href_list["tp"])
 		var/tp = text2num(href_list["tp"])
