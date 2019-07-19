@@ -2,6 +2,7 @@
 #include "adherent_base_preset.dm"
 #include "adherent_base_turfs.dm"
 #include "adherentbot.dm"
+#include "notes.dm"
 
 /obj/effect/overmap/sector/adherent_base
 	name = "aquatic planet"
